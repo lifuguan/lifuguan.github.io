@@ -1,30 +1,30 @@
-- id: reconfusion
-  title: "ReconFusion: 3D Reconstruction with Diffusion Priors"
-  venue: arXiv, 2023
-  description: "Using an multi-view image conditioned diffusion model to regularize a NeRF enabled few-view reconstruction."
-  project_page: https://reconfusion.github.io
+- id: GGRt
+  title: "GGRt: Towards Pose-free Generalizable 3D Gaussian Splatting in Real-time"
+  venue: arXiv, 2024
+  description: "As the first pose-free generalizable 3D-GS framework, GGRt achieves inference at > 5 FPS and real-time rendering at > 100 FPS"
+  project_page: https://3d-aigc.github.io/GGRt/
   arxiv: 2312.02981
   image: reconfusion_before.png
   image_mouseover: reconfusion_after.mp4
   authors:
-    - rundiwu
-    - bmild
-    - phenzler
-    - keunhong
-    - ruiqigao
-    - danielwatson
-    - pratuls
-    - dorverbin
-    - barron
-    - pooleb
-    - holynski
-- id: hypernerf
-  title: "CamP: Camera Preconditioning for Neural Radiance Fields"
-  venue: SIGGRAPH Asia, 2023
+  - Hao Li
+  - Yuanyuan Ga
+  - Chenming Wu
+  - Dingwen Zhang
+  - Yalun Dai
+  - Chen Zhao
+  - Haocheng Feng
+  - Errui Ding
+  - Jingdong Wang
+  - Junwei Han
+  
+- id: GP-NeRF
+  title: "GP-NeRF: Generalized Perception NeRF for Context-Aware 3D Scene Understanding"
+  venue: CVPR, 2024
   description: "Preconditioning camera optimization during NeRF training significantly improves their ability to jointly recover the scene and camera parameters."
   project_page: "https://camp-nerf.github.io"
   github: jonbarron/camp_zipnerf
-  arxiv: 2308.10902
+  arxiv: 2311.11863
   image: camp_before.jpg
   image_mouseover: camp_after.mp4
   authors:
