@@ -4,8 +4,8 @@
   description: "As the first pose-free generalizable 3D-GS framework, GGRt achieves inference at > 5 FPS and real-time rendering at > 100 FPS"
   project_page: https://3d-aigc.github.io/GGRt/
   arxiv: 2312.02981
-  image: reconfusion_before.png
-  image_mouseover: reconfusion_after.mp4
+  image: ggrt_image.jpg
+  image_mouseover: ggrt_video.mp4
   authors:
   - Hao Li
   - Yuanyuan Gao
