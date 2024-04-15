@@ -7,16 +7,16 @@
   image: ggrt_image.jpg
   image_mouseover: ggrt_video.mp4
   authors:
-  - Hao Li
-  - Yuanyuan Gao
-  - Chenming Wu
-  - Dingwen Zhang
-  - Yalun Dai
-  - Chen Zhao
-  - Haocheng Feng
-  - Errui Ding
-  - Jingdong Wang
-  - Junwei Han
+  - Hao
+  - Yuanyuan
+  - Chenming
+  - Dingwen
+  - Yalun
+  - Chen
+  - Haocheng
+  - Errui
+  - Jingdong
+  - Junwei
   
 - id: GP-NeRF
   title: "GP-NeRF: Generalized Perception NeRF for Context-Aware 3D Scene Understanding"
@@ -28,14 +28,14 @@
   image: gpnerf_image.jpg
   image_mouseover: gpnerf_video.mp4
   authors:
-    - Hao Li
-    - Dingwen Zhang
-    - Yalun Dai
-    - Nian Liu
-    - Lechao Cheng
-    - Jingfeng Li
-    - Jingdong Wang
-    - Junwei Han
+    - Hao
+    - Dingwen
+    - Yalun
+    - Nian
+    - Lechao
+    - Jingfeng
+    - Jingdong
+    - Junwei
   awards:
     - "Highlight"
 
@@ -49,12 +49,12 @@
   image: ltgc_image.jpg
   image_mouseover: ltgc_image.jpg
   authors:
-    - Qihao Zhao
-    - Yalun Dai
-    - Hao Li
-    - Wei Hu
-    - Fan Zhang
-    - Jun Liu
+    - Qihao
+    - Yalun
+    - Hao
+    - Wei
+    - Fan
+    - Jun
   awards:
     - "Oral Presentation"
 
@@ -67,13 +67,13 @@
   image: asdt_image.jpg
   image_mouseover: asdt_image.jpg
   authors:
-    - Dingwen Zhang
-    - Hao Li
-    - Wenyuan Zeng
-    - Chaowei Fang
-    - Lechao Cheng
-    - Ming-Ming Cheng
-    - Junwei Han
+    - Dingwen
+    - Hao
+    - Wenyuan
+    - Chaowei
+    - Lechao
+    - Ming-Ming
+    - Junwei
   awards:
 
 - id: SaliencyPrompt
@@ -82,11 +82,11 @@
   description: "Inspired by the recent success of the Prompting technique, we introduce a new pre-training method that boosts QEIS models by giving Saliency Prompt for queries/kernels."
   arxiv: 2302.01171
   authors:
-    - Hao Li
-    - Dingwen Zhang
-    - Nian Liu
-    - Lechao Cheng
-    - Yalun Dai
-    - Chao Zhang
-    - Xinggang Wang
-    - Junwei Han
+    - Hao
+    - Dingwen
+    - Nian
+    - Lechao
+    - Yalun
+    - Chao
+    - Xinggang
+    - Junwei
