@@ -64,3 +64,20 @@ Qihao:
   last_name: Zhao
   website: https://scholar.google.com
   is_me: false
+
+Yuanyuan:
+  first_name: Yuanyuan
+  last_name: Gao
+  website: https://lifuguan.github.io
+  is_me: false
+
+Chenming:
+  first_name: Chenming
+  last_name: Wu
+  website: https://chenming-wu.github.io/
+  is_me: false
+Jun:
+  first_name: Jun
+  last_name: Liu
+  website: https://people.sutd.edu.sg/~jun_liu/
+  is_me: false

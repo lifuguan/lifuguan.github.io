@@ -81,6 +81,9 @@
   venue: CVPR, 2023
   description: "Inspired by the recent success of the Prompting technique, we introduce a new pre-training method that boosts QEIS models by giving Saliency Prompt for queries/kernels."
   arxiv: 2302.01171
+  image: boost_image.jpg
+  image_mouseover: boost_image.jpg
+
   authors:
     - Hao
     - Dingwen
