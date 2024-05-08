@@ -81,3 +81,21 @@ Jun:
   last_name: Liu
   website: https://people.sutd.edu.sg/~jun_liu/
   is_me: false
+
+Mingming:
+  first_name: Mingming
+  last_name: Cheng
+  website: https://scholar.google.com/citations?user=huWpVyEAAAAJ
+  is_me: false
+
+Errui:
+  first_name: Errui
+  last_name: Ding
+  website: https://scholar.google.com/citations?user=1wzEtxcAAAAJ
+  is_me: false
+
+Chaowei:
+  first_name: Chaowei
+  last_name: Fang
+  website: https://scholar.google.com/citations?user=eNtYEmcAAAAJ
+  is_me: false
