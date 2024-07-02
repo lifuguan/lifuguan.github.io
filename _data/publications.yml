@@ -1,6 +1,43 @@
+- id: XLD
+  title: "XLD: A Cross-Lane Dataset for Benchmarking Novel Driving View Synthesis"
+  venue: Arxiv, 2024
+  description: "This paper presents a novel driving view synthesis dataset and benchmark specifically designed for autonomous driving simulations. This dataset is unique as it includes testing images captured by deviating from the training trajectory by 1-4 meters."
+  project_page: https://3d-aigc.github.io/XLD/
+  arxiv: 2406.18360
+  image: xld_image.jpg
+  image_mouseover: xld_image.jpg
+  authors:
+  - Hao
+  - Chenming
+  - Chen
+  - Haocheng
+  - Errui
+  - Dingwen
+  - Jingdong
+
+- id: VDG
+  title: "VDG: Vision-Only Dynamic Gaussian for Driving Simulation"
+  venue: Arxiv, 2024
+  description: "This paper addresses this issue by integrating self-supervised VO into our pose-free dynamic Gaussian method (VDG) to boost pose and depth initialization and static-dynamic decomposition."
+  project_page: https://3d-aigc.github.io/VDG/
+  arxiv: 2406.18198
+  image: vdg_image.jpg
+  image_mouseover: vdg_video.mp4
+  authors:
+  - Hao
+  - Jingfeng
+  - Dingwen
+  - Chenming
+  - Jieqi
+  - Chen
+  - Haocheng
+  - Errui
+  - Jingdong
+  - Junwei
+
 - id: GGRt
   title: "GGRt: Towards Pose-free Generalizable 3D Gaussian Splatting in Real-time"
-  venue: arXiv, 2024
+  venue: ECCV, 2024
   description: "As the first pose-free generalizable 3D-GS framework, GGRt achieves inference at > 5 FPS and real-time rendering at > 100 FPS"
   project_page: https://3d-aigc.github.io/GGRt/
   arxiv: 2312.02981
