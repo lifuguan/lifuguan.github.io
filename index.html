@@ -1,268 +1,409 @@
----
-layout: null
----
-<!DOCTYPE html>
-<html lang="en-US">
+<html>
 
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Hao Li (Leo Li)</title>
+  <link href="./css/style.css" rel="stylesheet" media="all" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/bd3becbd8d.js" crossorigin="anonymous"></script>
 
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>{{ site.name }}</title>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
+  <script type="text/javascript">
+    window.onload = choosePic;
+    var myPix = new Array("./images/portrait.jpg");
+    function choosePic() {
+      var randomNum = Math.floor(Math.random() * myPix.length);
+      document.getElementById("myPicture").src = myPix[randomNum];
     }
-
-    gtag('js', new Date());
-
-    gtag('config', '{{ site.google_analytics }}');
+    function lastUpdate() {
+      var x = document.lastModified.substr(0, 10);
+      document.getElementById("demo").innerHTML = x;
+    }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="{{ '/css/fontawesome.all.min.css' | relative_url }}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
-  <link href="{{ '/css/bulma.min.css' | relative_url }}" rel="stylesheet">
-  <link href="{{ '/css/index.css' | relative_url }}" rel="stylesheet">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="{{ '/js/fontawesome.all.min.js' | relative_url }}"></script>
-  <script src="{{ '/js/index.js' | relative_url }}"></script>
+  <script type="text/javascript" src="./js/hidebib.js"></script>
+  <script type="text/javascript" src="./js/loadtxt.js"></script>
 </head>
 
-<body>
-
-  <section class="hero">
-    <div class="hero-body container is-max-desktop">
-      <div class="columns is-vcentered">
-
-        <div class="column is-4">
-          <div class="portrait">
-            <img src="{{ '/images/portrait.jpg' | relative_url }}" />
-          </div>
-        </div>
-
-        <div class="column">
-          <h1 class="title">
-            <b>Hello, I'm {{ site.name }}</b>
-          </h1>
-          <div class="content has-text-justified">
-            {{ site.description | markdownify }}
-            <div class="buttons">
-              <a class="external-link button is-light" href="cv.html">
-                <span class="icon"><i class="fas fa-file"></i></span>
-                <span>CV</span>
+<body onload="lastUpdate()">
+  <div class="content">
+    <div id="container">
+      <table style="margin: 0 auto; text-align: center; width: 100%">
+        <tr>
+          <td style="text-align: center">
+            <img
+              id="myPicture"
+              src="./images/portrait.jpg"
+              style="border-radius: 20%; width: 300px;"
+              alt="Portrait"
+            />
+          </td>
+          <td>
+            <div id="DocInfo" style="text-align: center;">
+              <div id="intro">
+                <h1>Hao Li (Leo Li)</h1>
+                <a style="color: black" href="https://en.nwpu.edu.cn/">
+                  Northwestern Polytechnical University
+                </a>
+                <br /><br />
+                <a href="mailto:lifugan_10027@outlook.com">
+                  <span
+                    class="fa fa-envelope"
+                    style="color: rgb(59, 59, 63); font-size: 20px"
+                  >
+                    <span style="font-family: Optima Bold">lifugan_10027</span>
+                    <span
+                      class="fa fa-at"
+                      style="color: rgb(59, 59, 63); font-size: 20px"
+                    >
+                      <span style="font-family: Optima Bold">outlook.com</span>
+                    </span>
+                  </span>
+                </a>
+                <br />
+              </div>
+              <br />
+              <a style="color: black" href="https://github.com/lifuguan">
+                <span class="fa fa-github fa-xl"></span>
               </a>
-
-              <a class="external-link button is-light"
-                href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
-                <span class="icon"><i class="ai ai-google-scholar"></i></span>
-                <span>Scholar</span>
+              <a
+                style="color: black"
+                href="https://scholar.google.com/citations?hl=en&user=Qc0paFUAAAAJ"
+              >
+                <span class="ai ai-google-scholar fa-xl"></span>
               </a>
-
-              <a class="external-link button is-light" href="https://github.com/{{ site.github_username }}">
-                <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Github</span>
-              </a>
+              <br />
             </div>
+          </td>
+        </tr>
+      </table>
+      
+      <table>
+        <tr>
+          <td>
+            <br />
+            <h1>Biography</h1>
 
-          </div>
-        </div>
+            I am currently a third-year (2022-now) Ph.D. student in the School of Automation of 
+            <a href="https://en.nwpu.edu.cn/">Northwestern Polytechnical University (NPU)</a>,
+            supervised by <a href="https://teacher.nwpu.edu.cn/zdw2006yyy">Prof. Dingwen Zhang Zhang and <a href="https://scholar.google.com/citations?user=xrqsoesAAAAJ">Prof. Junwei Han (IEEE Fellow)</a>.
+            My research interests lie in <u>Representitve Learning</u>, <u>3D Gaussian Splatting(3DGS)</u>, and <u>3D AI-Generated Content (AIGC)</u>.<br /><br />
+            
+            I am also joining AIGC Group, StepFun Inc. as Research Intern, led by <a href="https://openreview.net/profile?id=~Xuanyang_Zhang2">Xuanyang Zhang</a> and <a href="https://www.skicyyu.org/">Dr. Gang Yu</a>.<br /><br />
+
+            From 2023 to 2024, I worked as a research intern at the Robotcis Team, 
+            <a href="https://www.bytedance.com/">ByteDance AI Lab</a>, under the mentorship of 
+            <a href="https://minghanqin.github.io/">Minghan Qin</a>. I also interned with the VIS, 
+            at <a href="https://vis.baidu.com/#/">Baidu Inc.</a>, guided by 
+            <a href="https://chenming-wu.github.io/">Dr. Chenming Wu</a> and  <a href="https://jingdongwang2017.github.io/">Jingdong Wang (IEEE Fellow)</a>.
+
+            In 2022 to 2023,I was a research intern at <a href="https://www.shlab.org.cn/">Zhejiang Lab</a>, 
+            leading with <a href="https://scholar.google.com/citations?user=PKFAv-cAAAAJ">Prof. Lechao Cheng Cheng</a> .
+            <br />
+          </td>
+        </tr>
+      </table>
+
+      <div class="logo">
+        <a href="https://en.nwpu.edu.cn/"><img  src="./images/npu.png" /></a>
+        <a href="https://vis.baidu.com"><img style="border-radius: 0%" src="./images/zhejiang lab.png" /></a>
+        <a href="https://vis.baidu.com"><img style="border-radius: 0%" src="./images/baidu-logo.png" /></a>
+        <a href="https://bytedance.com"><img  style="border-radius: 0%" src="./images/bytedance-ht.png" /></a>
+        <a href="https://www.stepfun.com/"><img style="border-radius: 0%" src="./images/stepfun.png" /></a>
       </div>
-    </div>
-  </section>
 
-  <!-- News. -->
-  <div class="hr">
-    <div class="container">
-      <hr>
+
+      <h1>News</h1>
+      [2024/08] Joining AIGC Group, StepFun Inc., led by <a href="https://openreview.net/profile?id=~Xuanyang_Zhang2">Xuanyang Zhang</a> and <a href="https://www.skicyyu.org/">Dr. Gang Yu</a>!<br>
+      [2024/10] <a href="https://3d-aigc.github.io/XLD">XLD</a> got accepted by <strong style="color: brown">3DV 2025</strong>! &#127881;<br>
+      [2024/08] Joining ByteDance AI Lab, led by <a href="https://minghanqin.github.io/">Minghan Qin</a>!<br>
+      [2024/08] Invited talk on <a href="https://mp.weixin.qq.com/s/rGh-zI0zYaJKZ0EWIjyy7w">GAMES Webinar</a>.
+      [2024/07] <a href="https://3d-aigc.github.io/GGRt">GGRt</a> got accepted by <strong style="color: brown">ECCV 2024</strong>!<br>
+      [2024/02] <a href="https://github.com/lifuguan/gp-nerf">GP-NeRF</a> got accepted by <strong style="color: brown">CVPR 2024</strong> and selected as <strong style="color: brown">Highlight (top 3.8%)</strong>! &#127881;<br>
+      [2024/02] <a href="https://ltgccode.github.io/">LTGC</a> got accepted by <strong style="color: brown">CVPR 2024</strong> and selected as <strong style="color: brown">Oral (top 0.8%)</strong>! &#127881;<br>
+      [2024/01] Invited talk on <a href="https://mp.weixin.qq.com/s/htNrZaDuhwez03kqJLwjpg">3D视觉工坊</a>.<br>
+      [2023/12] Joining VIS, Baidu, Inc. as Research Intern, led by <a href="https://chenming-wu.github.io/">Dr. Chenming Wu</a> and  <a href="https://jingdongwang2017.github.io/">Jingdong Wang (IEEE Fellow)</a>!<br>
+      [2023/11] <a href="https://ieeexplore.ieee.org/document/10367821">ASDT</a> got accepted by <strong style="color: brown">TIP 2024</strong>! &#127881;<br>
+      [2023/11] <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Li_Boosting_Low-Data_Instance_Segmentation_by_Unsupervised_Pre-Training_With_Saliency_Prompt_CVPR_2023_paper.pdf">Saliency Prompt</a> got accepted by <strong style="color: brown">CVPR 2023</strong>! &#127881;<br>
+      [2023/12] Joining Zhejiang Lab as Research Intern, led by <a href="https://scholar.google.com/citations?user=PKFAv-cAAAAJ">Prof. Lechao Cheng</a>!<br>
+      <br /><br />
+
+      <h1 id="citation">Publications</h1>
+      Favorite papers are <span style="background-color: lightgoldenrodyellow;">highlighted</span>. <br />
+      
+      <table class="pub_table">
+        <tr id="li2024langsurf" class="focus">
+          <td class="pub_td1">
+            <video autoplay loop muted width="180" height="120" style="display: block; margin: 0 auto;">
+              <source src="./images/langsurf.mp4" type="video/mp4">
+            </video>
+            
+          </td>
+          <td class="pub_td2">
+            <b
+              >LangSurf: Language-Embedded Surface Gaussians for 3D Scene Understanding
+              &nbsp;</b
+            ><br />
+
+            <br />
+            <strong>Hao Li</strong>,
+            <a href="https://qinminghan.github.io/">Minghan Qin#</a>,
+            <u>Zhengyu Zou</u>,
+            <u>Diqi He</u>,
+            <u>Bohan Li</u>,
+            <u>Bingquan Dai</u>,
+            <u>Dingwen Zhang#</u>,
+            <u>Junwei Han</u>
+            <br />
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              <i> <strong style="color: brown">arXiv 2024</strong></i>
+            </div>
+            <a class="box" href="https://langsurf.github.io/"
+              ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+              >Home&nbsp;</a>
+
+            <a class="box" href="https://arxiv.org/abs/2412.17635"
+              ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+            </a>
+
+            <a class="box" href="https://youtu.be/jU83kljQaR0"
+              ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+              >Video&nbsp;</a>
+
+            <a href="https://github.com/lifuguan/langsurf">
+              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>
+              Code&nbsp;
+            </a>
+
+            <a
+              shape="rect"
+              href="javascript:togglebib(&#39;chen2024feat2gs&#39;)"
+              class="togglebib box"
+              ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+              >Bibtex&nbsp;</a
+            >
+            <pre
+              id="feat2gsbib"
+              xml:space="preserve"
+              style="display: none"
+            ></pre>
+            <span
+              id="feat2gsabs"
+              style="display: none; margin-top: 10px"
+            ></span>
+          </td>
+        </tr>
+
+        <tr id="xld2024">
+          <td class="pub_td1">
+            <img
+              src="images/xld_image.jpg"
+              width="180"
+              height="120"
+              style="display: block; margin: 0 auto; border-radius: 5px;"
+              alt="XLD Dataset Image"
+            />
+          </td>
+          <td class="pub_td2">
+            <b>XLD: A Cross-Lane Dataset for Benchmarking Novel Driving View Synthesis</b>
+            <br /><br />
+            <strong>Hao Li</strong>,
+            <u>Chenming Wu</u>, <u>Chen Zhao</u>, <u>Haocheng Feng</u>, <u>Errui Ding</u>,
+            <u>Dingwe Zhang#</u>, <u>Jingdong Wang</u>
+            <br />
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              <i><strong style="color: brown">3DV 2025</strong></i>
+            </div>
+            <a class="box" href="https://3d-aigc.github.io/XLD/"
+              ><i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;</a>
+            <a class="box" href="https://arxiv.org/abs/2406.18360"
+              ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper</a>
+              <a href="https://github.com/lifuguan/xld_code">
+                <i class="fa fa-github" aria-hidden="true">&nbsp;</i>
+                Code&nbsp;
+              </a>
+          </td>
+        </tr>
+        <tr id="vdg2024">
+          <td class="pub_td1">
+            <video autoplay loop muted width="180" height="120" style="display: block; margin: 0 auto;">
+              <source src="images/vdg_video.mp4" type="video/mp4">
+            </video>
+          </td>
+          <td class="pub_td2">
+            <b>VDG: Vision-Only Dynamic Gaussian for Driving Simulation</b><br /><br />
+            <strong>Hao Li</strong>,
+            <u>Jingfeng Li</u>, <u>Dingwen Zhang</u>, <u>Chenming Wu</u>, <u>Jieqi Shi</u>, <u>Chen Zhao</u>, <u>Haocheng Feng</u>, <u>Errui Ding</u>, 
+            <u>Jingdong Wang</u>, <u>Junwei Han</u><br />
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              <i><strong style="color: brown">arXiv 2024</strong></i>
+            </div>
+            <a class="box" href="https://3d-aigc.github.io/VDG/">
+              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
+            </a>
+            <a class="box" href="https://arxiv.org/abs/2406.18198">
+              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+            </a>
+          </td>
+        </tr>
+        
+        <tr id="ggrt2024" class="focus">
+          <td class="pub_td1">
+            <video autoplay loop muted width="180" height="120" style="display: block; margin: 0 auto;">
+              <source src="images/ggrt_video.mp4" type="video/mp4">
+            </video>
+          </td>
+          <td class="pub_td2">
+            <b>GGRt: Towards Pose-free Generalizable 3D Gaussian Splatting in Real-time</b><br /><br />
+            <strong>Hao Li</strong>,
+            <u>Yuanyuan Gao</u>, <u>Chenming Wu</u>, <u>Dingwen Zhang</u>, <u>Yalun Dai</u>, <u>Chen Zhao</u>, <u>Haocheng Feng</u>, <u>Errui Ding</u>, 
+            <u>Jingdong Wang</u>, <u>Junwei Han</u><br />
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              <i><strong style="color: brown">ECCV 2024</strong></i>
+            </div>
+            <a class="box" href="https://3d-aigc.github.io/GGRt/">
+              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
+            </a> 
+            <a class="box" href="https://arxiv.org/abs/2312.02981">
+              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+            </a>
+            <a href="https://github.com/lifuguan/GGRt_official">
+              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
+            </a>
+          </td>
+        </tr>
+        
+        <tr id="gpnerf2024" class="focus">
+          <td class="pub_td1">
+            <video autoplay loop muted width="180" height="120" style="display: block; margin: 0 auto;">
+              <source src="images/gpnerf_video.mp4" type="video/mp4">
+            </video>
+          </td>
+          <td class="pub_td2">
+            <b>GP-NeRF: Generalized Perception NeRF for Context-Aware 3D Scene Understanding</b><br /><br />
+            <strong>Hao Li</strong>,
+            <u>Dingwen Zhang</u>, <u>Yalun Dai</u>, <u>Nian Liu</u>, <u>Lechao Cheng</u>, <u>Jingfeng</u>, <u>Jingdong Wang</u>, <u>Junwei Han</u><br />
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              <i><strong style="color: brown">CVPR 2024 - Highlight</strong></i>
+            </div>
+            <a class="box" href="https://lifuguan.github.io/gpnerf-pages/">
+              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
+            </a>
+            <a class="box" href="https://arxiv.org/abs/2311.11863">
+              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+            </a>
+            <a href="https://github.com/lifuguan/GP-NeRF">
+              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
+            </a>
+          </td>
+        </tr>
+        
+        <tr id="ltgc2024" class="focus">
+          <td class="pub_td1">
+            <img
+              src="images/ltgc_image.jpg"
+              width="180"
+              height="120"
+              style="display: block; margin: 0 auto; border-radius: 5px;"
+              alt="LTGC Image"
+            />
+          </td>
+          <td class="pub_td2">
+            <b>LTGC: Long-Tail Recognition via Leveraging LLMs-driven Generated Content</b><br /><br />
+            
+            <u>Qihao Zhao†</u>, <u>Yalun Dai†</u>, <strong>Hao Li†</strong>, <u>Wei Hu</u>, <u>Fan Zhang</u>, <u>Jun Liu</u><br />
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              <i><strong style="color: brown">CVPR 2024 - Oral Presentation</strong></i>
+            </div>
+            <a class="box" href="https://ltgccode.github.io/">
+              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
+            </a>
+            <a class="box" href="https://arxiv.org/abs/2403.05854">
+              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+            </a>
+            <a href="https://github.com/ltgccode/LTGC-Long-Tail-Recognition-via-Leveraging-Generated-Content">
+              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
+            </a>
+          </td>
+        </tr>
+        
+        <tr id="asdt2024">
+          <td class="pub_td1">
+            <img
+              src="images/asdt_image.jpg"
+              width="180"
+              height="120"
+              style="display: block; margin: 0 auto; border-radius: 5px;"
+              alt="ASDT Image"
+            />
+          </td>
+          <td class="pub_td2">
+            <b>Weakly Supervised Semantic Segmentation via Alternate Self-Dual Teaching</b><br /><br />
+            <strong>Hao Li</strong>,
+            <u>Dingwen Zhang</u>, <u>Chaowei Fang</u>, <u>Lechao Cheng</u>, <u>Mingming Cheng</u>, <u>Junwei Han</u><br />
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              <i><strong style="color: brown">IEEE TIP 2024</strong></i>
+            </div>
+            <a class="box" href="https://ieeexplore.ieee.org/document/10367821">
+              <i class="fas fa-file-lines" aria-hidden="true">&nbsp;</i>Home&nbsp;
+            </a>
+            <a href="https://github.com/lifuguan/ASDT">
+              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
+            </a>
+          </td>
+        </tr>
+        
+        <tr id="saliencyprompt2023">
+          <td class="pub_td1">
+            <img
+              src="images/boost_image.jpg"
+              width="180"
+              height="120"
+              style="display: block; margin: 0 auto; border-radius: 5px;"
+              alt="Saliency Prompt Image"
+            />
+          </td>
+          <td class="pub_td2">
+            <b>Boosting low-data instance segmentation by unsupervised pre-training with saliency prompt</b><br /><br />
+            <strong>Hao Li</strong>,
+            <u>Dingwen Zhang</u>, <u>Nian Liu</u>, <u>Lechao Cheng</u>, <u>Yalun Dai</u>, <u>Xinggang</u>, <u>Junwei Han</u><br />
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              <i><strong style="color: brown">CVPR 2023</strong></i>
+            </div>
+            <a class="box" href="https://arxiv.org/abs/2302.01171">
+              <i class="fas fa-file-lines" aria-hidden="true">&nbsp;</i>Home&nbsp;
+            </a>
+          </td>
+        </tr>
+        
+      </table>
+
+      <h1>Talks</h1>
+      <li>可泛化3DGS的现状和未来  (<a href="https://mp.weixin.qq.com/s/rGh-zI0zYaJKZ0EWIjyy7w">GAMES Webinar</a>)</li>
+      <li>可泛化语义NeRF  (<a href="https://mp.weixin.qq.com/s/htNrZaDuhwez03kqJLwjpg">3D视觉工坊</a>)</li>
+
+      <h1>Honors and Awards</h1>
+      <li> <b>Outstanding Students (First Grade)</b> in Northwestern Polytechnical University, 2024.</li>
+      <li> <b>Outstanding Interns</b> in Baidu Inc., 2023.</li>
+      <li> <b>2nd</b> in International Algorithm Case Competition, 2022.</li>
+      <li> <b>Finalist Winner (2%)</b> in International Mathematical Contest in Modeling (MCM), 2021.</li>
+      <br />
+      
+
+      
+      <div align="center">
+        <div style="width: 250px; height: 250px">
+          <!-- <script type="text/javascript" id="clstr_globe"
+            src="//clustrmaps.com/globe.js?d=rW3OE8b2mKOjjq_alCSlCohNv0gBVFF6R0Pj4W60HmY"></script> -->
+          <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5pkd9xbyiaa&amp;m=0&amp;c=00fff6&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+        </div>
+        The source code of this website is borrowed from <a href="https://xiuyuliang.cn/">Yuliang Xiu</a> <br />
+        <strong>
+          The page is last updated at <span style="color: rgb(53, 182, 171)" id="demo"></span>
+        </strong>
+      </div>
     </div>
   </div>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-
-      <h2 class="title is-3">News</h2>
-      <div class="content">
-        <ul>
-          {% for news in site.data.news %}
-          <li>
-            <b>{{ news.date }}</b>: {{ news.description | markdownify | remove: '<p>' | remove: '</p>' }}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <h2 class="title is-3">Publications</h2>
-
-      {% for publication in site.data.publications %}
-      <div class="publication-block columns">
-
-        <div class="column is-2">
-          <div class="publication-image {% if publication.image_mouseover %}publication-mousecell{% endif %}">
-            {% if publication.image_mouseover contains "mp4" %}
-            <video autoplay preload playsinline class="" height="100%" loop muted width="100%">
-              <source src="./images/{{ publication.image_mouseover }}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            {% endif %}
-            <img alt="{{ publication.title }}" src="./images/{{ publication.image }}" />
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="content">
-            <h3 class="publication-title"><a href="{{ publication.project_page }}">{{ publication.title }}</a></h3>
-            <div class="publication-authors">
-              {% for author_id in publication.authors %}
-              {% assign author = site.data.authors[author_id] %}
-              <span class="author-block {% if author.is_me %}author-me{% endif %}">
-                {% if author.is_me %}
-                {{ author.first_name }} {{author.middle_name}} {{ author.last_name }}{% if forloop.last == false %},{%
-                endif %}
-                {% else %}
-                <a href="{{ author.website }}">{{ author.first_name }} {{ author.middle_name }} {{ author.last_name
-                  }}</a>{% if forloop.last == false %},{% endif %}
-                {% endif %}
-              </span>
-              {% endfor %}
-            </div>
-            <div class="publication-venue">
-              <span>{{ publication.venue }}</span>
-              {% for award in publication.awards %}
-                <span class="publication-venue-emph">{{ award }}<span>
-              {% endfor %}
-            </div>
-            <p class="publication-description">{{ publication.description }}</p>
-            <!-- Publication Links. -->
-            <div class="publication-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" href="{{ publication.project_page }}">
-                <span class="icon"><i class="fas fa-globe-asia"></i></span>
-                <span>Project Page</span>
-              </a>
-              <a class="external-link button is-small is-ghost" href="https://arxiv.org/pdf/{{ publication.arxiv }}.pdf">
-                <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                <span>PDF</span>
-              </a>
-              <a class="external-link button is-small is-ghost" href="https://arxiv.org/abs/{{ publication.arxiv }}">
-                <span class="icon"><i class="ai ai-arxiv"></i></span>
-                <span>arXiv</span>
-              </a>
-              {% if publication.github %}
-              <a class="external-link button is-small is-ghost" href="https://github.com/{{ publication.github }}">
-                <span class="icon"><i class="fa fab fa-github"></i></span>
-                <span>Code</span>
-              </a>
-              {% endif %}
-            </div>
-            <!--/ Publication Links. -->
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </section>
-
-<section>
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-    <tr>
-      <td>
-        <heading>Experiences</heading>
-      </td>
-    </tr>
-  </tbody></table>
-  <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-    <tr>
-      <!-- <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/sensetime_lego.png"></td> -->
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/shailab.jpg" alt="shailab" width="160"></td>
-      <td width="75%" valign="center">
-        <!-- <a >[2020.07-2020.09]  Computer Vision Algorithm Intern, Multi-sensor Fusion Localization Group, Sensetime</a> -->
-        Researcher Intern
-        <br><a href="https://github.com/Open3DVLab">General 3D Vision Team</a>, <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory</a>
-        <br> 
-        As the first author/corresponding author/project lead, proposed Match Anything (Correspondence Foundation Model), DiffusionSfM, InternVerse (Reconstruction Foundation Models include SurfelGS, FedSurfGS, GigaGS, StreetSurfGS, InvrenderGS, NeuRodin), 
-        DiffPano (Text to Multi-view Panorama Generation), MAIL (Embodied Foundation Model for Imitation Learning), etc. 
-        Working with <a href="https://tonghe90.github.io/">Dr. Tong He</a>, <a href="https://wlouyang.github.io/">Prof. Wanli Ouyang</a>, and <a href="https://mmlab.siat.ac.cn/yuqiao">Prof. Yu Qiao</a>.
-        Mentoring 10+ junior researchers at Shanghai AI Lab.
-        <br>
-        2023.10-Present
-      </td>
-    </tr>
-
-    <tr>
-      <!-- <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/sensetime_lego.png"></td> -->
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/ETHZ.png" alt="ethz" width="160"></td>
-      <td width="75%" valign="center">
-        <!-- <a >[2020.07-2020.09]  Computer Vision Algorithm Intern, Multi-sensor Fusion Localization Group, Sensetime</a> -->
-        Visiting Researcher
-        <br><a href="https://cvg.ethz.ch/">Computer Vision and Geometry Lab</a>, <a href="https://ethz.ch/en.html">ETH Zürich</a>,
-        advised by <a href="https://people.inf.ethz.ch/marc.pollefeys/"> Prof. Marc Pollefeys </a>
-        <br>
-        2022.09-2023.03
-      </td>
-    </tr>
-
-    <tr>
-      <!-- <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/sensetime_lego.png"></td> -->
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/sensetime.png" alt="sensetime" width="160"></td>
-      <td width="75%" valign="center">
-        <!-- <a >[2020.07-2020.09]  Computer Vision Algorithm Intern, Multi-sensor Fusion Localization Group, Sensetime</a> -->
-        3D Vision Researcher Intern
-        <br>3D Reconstruction of Indoor Scene of RGB-D Images, <a href="https://www.sensetime.com/">Sensetime</a>
-        <br> 2018.01-2018.05
-      </td>
-    </tr>
-    <tr>
-      <!-- <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/sensetime_lego.png"></td> -->
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/baidu.png" alt="baidu" width="160"></td>
-      <td width="75%" valign="center">
-        Software Engineer Intern 
-        <br> Video Search System, <a href="https://www.baidu.com/">Baidu</a>
-        <br> 2017.02-2017.07
-        <br>
-      </td>
-    </tr>
-    
-
-    
-    
-  </tbody></table>
-</section>
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content footer-links has-text-centered">
-        <a href="mailto:{{ site.email }}">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a class="external-link" href="https://github.com/{{ site.github_username }}">
-          <i class="fab fa-github"></i>
-        </a>
-        <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
-          <i class="ai ai-google-scholar"></i>
-        </a>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              Feel free to <a href="https://github.com/lifuguan/lifuguan.github.io">borrow this template</a>.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
 </body>
 
 </html>
