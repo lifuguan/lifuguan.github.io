@@ -13,8 +13,6 @@
   --venue-bg: #faece7;
   --honor: #854f0b;
   --honor-bg: #faeeda;
-  --hf: #7c5e00;
-  --hf-bg: #fff1b8;
   --nav-h: 58px;
   --maxw: 840px;
 }
@@ -32,8 +30,6 @@ html[data-theme="dark"] {
   --venue-bg: #2a1810;
   --honor: #fac775;
   --honor-bg: #412402;
-  --hf: #ffe08a;
-  --hf-bg: #3a3000;
 }
 
 * { box-sizing: border-box; }
@@ -155,10 +151,6 @@ h2.section-title {
 .pub-tag.lead i { font-size: 11px; }
 .pub-tag.honor {
   font-size: 12px; font-weight: 600; color: var(--honor); background: var(--honor-bg);
-  border-radius: 6px; padding: 3px 10px;
-}
-.pub-tag.hf {
-  font-size: 12px; font-weight: 600; color: var(--hf); background: var(--hf-bg);
   border-radius: 6px; padding: 3px 10px;
 }
 .pub-title { font-size: 16px; font-weight: 600; line-height: 1.4; margin: 0 0 6px; color: var(--text); }
