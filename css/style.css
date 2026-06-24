@@ -1,460 +1,197 @@
-@font-face {
-  font-family: "Optima";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./fonts/OptimaLTPro-Roman.woff") format("woff");
+/* ===== Hao Li — academic homepage (al-folio "Minimal Light" inspired) ===== */
+
+:root {
+  --accent: #5b50d6;
+  --accent-soft: #ece9fb;
+  --bg: #ffffff;
+  --surface: #f7f7f9;
+  --surface-2: #f1f1f4;
+  --text: #1d1d1f;
+  --muted: #6b6b73;
+  --border: #e7e7ea;
+  --venue: #993c1d;
+  --venue-bg: #faece7;
+  --honor: #854f0b;
+  --honor-bg: #faeeda;
+  --hf: #7c5e00;
+  --hf-bg: #fff1b8;
+  --nav-h: 58px;
+  --maxw: 840px;
 }
 
-@font-face {
-  font-family: "Optima Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./fonts/OptimaLTPro-Italic.woff") format("woff");
+html[data-theme="dark"] {
+  --accent: #9a91f5;
+  --accent-soft: #24213a;
+  --bg: #0f1115;
+  --surface: #171a21;
+  --surface-2: #1c2029;
+  --text: #e7e9ee;
+  --muted: #9aa1ad;
+  --border: #272b34;
+  --venue: #f0997b;
+  --venue-bg: #2a1810;
+  --honor: #fac775;
+  --honor-bg: #412402;
+  --hf: #ffe08a;
+  --hf-bg: #3a3000;
 }
 
-@font-face {
-  font-family: "Optima Medium";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./fonts/OptimaLTPro-Medium.woff") format("woff");
-}
+* { box-sizing: border-box; }
 
-@font-face {
-  font-family: "Optima Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./fonts/OptimaLTPro-Bold.woff") format("woff");
-}
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: "Optima";
-  /* background-color: #f8f7debd; */
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  transition: background .25s ease, color .25s ease;
 }
 
-.content {
-  width: 1000px;
-  padding: 25px 50px;
-  margin: 20px auto;
-  /* background-color: #f8f7debd; */
-  box-shadow: 0px 0px 20px #999;
-  border-radius: 15px;
-}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-table.pub_table {
-  table-layout: fixed;
-  width: 100%;
-  border-spacing: 0px 10px;
-}
-
-table.pub_table tr.focus {
-  background-color:lightgoldenrodyellow;
-}
-
-td.pub_td1 {
-  height: 120px;
-  width: 180px;
-  padding: 8px;
-  /* outline: 1px solid gray; */
-}
-
-td.pub_td1 img {
-  height: 120px;
-  width: 180px;
-  /* outline: 1px solid gray; */
-}
-
-td.pub_td1 marquee img {
-  height: 120px;
-  width: 400px;
-}
-
-td.pub_td2 {
-  padding-top: 5px;
-  padding-left: 5px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-  vertical-align: top;
-}
-
-div#container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 850px;
-  text-align: left;
-  position: relative;
-  /* background-color: #f8f7debd; */
-}
-
-div#DocInfo {
-  color: #1367a7;
-  /*font-weight: lighter;*/
-  height: 200px;
-  font-size: 18px;
-}
-div#intro {
-  text-align: center;
-  padding-top: 10px;
-}
-
-
-div.gallery {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-div.gallery > img {
-  
-  padding: 2px;
-  height: 90px;
-  width: auto;
-
-}
-
-div.logo {
-  text-align: center;
+/* ---------- Navbar ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-h);
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-name { font-weight: 600; font-size: 16px; color: var(--text); letter-spacing: .2px; }
+.nav-links { display: flex; align-items: center; gap: 22px; }
+.nav-links a { color: var(--muted); font-size: 14px; font-weight: 500; }
+.nav-links a:hover { color: var(--accent); text-decoration: none; }
+.theme-btn {
+  background: none; border: 1px solid var(--border); color: var(--muted);
+  width: 34px; height: 34px; border-radius: 9px; cursor: pointer; font-size: 15px;
+  display: inline-flex; align-items: center; justify-content: center; transition: all .2s ease;
+}
+.theme-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- Layout ---------- */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
+section { scroll-margin-top: calc(var(--nav-h) + 16px); }
+
+h2.section-title {
+  font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.4px;
+  color: var(--muted); margin: 52px 0 22px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
 }
 
-div.logo > a img {
-  padding: 5px;
-  margin: 8px;
-  height: 50px;
-  border-radius: 50%;
+/* ---------- Hero ---------- */
+.hero { display: flex; gap: 36px; align-items: center; padding: 50px 0 8px; }
+.hero-photo {
+  width: 172px; height: 172px; border-radius: 24px; object-fit: cover; flex: 0 0 auto;
+  box-shadow: 0 6px 28px rgba(0,0,0,.10);
 }
+.hero h1 { font-size: 30px; font-weight: 700; margin: 0 0 4px; letter-spacing: -.4px; }
+.hero h1 .alias { font-size: 19px; font-weight: 500; color: var(--muted); }
+.hero .role { color: var(--accent); font-weight: 500; font-size: 16px; margin: 0 0 12px; }
+.hero .affil { color: var(--muted); font-size: 15px; margin: 0 0 16px; }
+.hero .affil a { color: var(--text); }
 
-div.logo > a img:hover {
-  box-shadow: 0px 0px 10px rgba(0, 140, 186, 0.5);
+.social { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; font-size: 21px; }
+.social a { color: var(--muted); transition: color .2s, transform .2s; }
+.social a:hover { color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.social .email { font-size: 14px; font-weight: 500; }
+
+/* ---------- Biography ---------- */
+.bio p { margin: 0 0 14px; }
+.hl { color: var(--accent); font-weight: 500; }
+
+/* ---------- Affiliation logos ---------- */
+.logos { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; margin-top: 26px; }
+.logos img { height: 38px; width: auto; transition: transform .25s ease; }
+.logos a:hover img { transform: translateY(-2px); }
+
+/* ---------- News ---------- */
+.news { max-height: 340px; overflow-y: auto; padding-right: 8px; }
+.news-item { display: flex; gap: 14px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--border); }
+.news-item:last-child { border-bottom: none; }
+.news-date {
+  flex: 0 0 auto; font-size: 12px; font-weight: 600; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 2px 9px; min-width: 66px; text-align: center;
 }
+.news-text { font-size: 15px; }
+.news::-webkit-scrollbar { width: 8px; }
+.news::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
 
-span.fa-stack > a > i.fab:hover, i.fas:hover {
-  margin-top: 10px;
+/* ---------- Publications ---------- */
+.legend { font-size: 13px; color: var(--muted); margin: -8px 0 22px; line-height: 2.1; }
+.legend .lead-dot { color: var(--accent); font-weight: 600; }
+
+.pub {
+  display: flex; gap: 22px; padding: 18px; margin-bottom: 14px;
+  border: 1px solid var(--border); border-radius: 14px; background: var(--bg);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
-
-h4,
-h3,
-h2,
-h1 {
-  font-family: "Optima Bold";
+.pub:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); box-shadow: 0 6px 22px rgba(0,0,0,.06); }
+.pub-thumb { flex: 0 0 188px; }
+.pub-thumb img, .pub-thumb video {
+  width: 188px; height: 118px; object-fit: cover; border-radius: 10px; display: block; background: var(--surface-2);
 }
-
-h1 {
-  color: #000000;
+.pub-info { flex: 1; min-width: 0; }
+.pub-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.pub-venue {
+  font-size: 12px; font-weight: 600; color: var(--venue); background: var(--venue-bg);
+  border-radius: 6px; padding: 3px 10px;
 }
-
-h2 {
-  font-size: 130%;
+.pub-tag.lead {
+  font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-soft);
+  border-radius: 6px; padding: 3px 10px;
 }
-
-b,
-strong {
-  font-family: "Optima Bold";
+.pub-tag.lead i { font-size: 11px; }
+.pub-tag.honor {
+  font-size: 12px; font-weight: 600; color: var(--honor); background: var(--honor-bg);
+  border-radius: 6px; padding: 3px 10px;
 }
-
-a {
-  font-family: "Optima Medium";
+.pub-tag.hf {
+  font-size: 12px; font-weight: 600; color: var(--hf); background: var(--hf-bg);
+  border-radius: 6px; padding: 3px 10px;
 }
-
-p {
-  color: #5b5b5b;
-  margin-bottom: 50px;
+.pub-title { font-size: 16px; font-weight: 600; line-height: 1.4; margin: 0 0 6px; color: var(--text); }
+.pub-authors { font-size: 14px; color: var(--muted); margin: 0 0 12px; line-height: 1.55; }
+.pub-authors .me { color: var(--text); font-weight: 600; }
+.pub-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.pub-links a {
+  font-size: 13px; font-weight: 500; color: var(--text);
+  border: 1px solid var(--border); border-radius: 8px; padding: 4px 11px;
+  display: inline-flex; align-items: center; gap: 5px; transition: all .18s ease;
 }
+.pub-links a:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); text-decoration: none; }
 
-p.caption {
-  color: #9b9b9b;
-  text-align: left;
-  width: 600px;
-}
+/* ---------- Lists (talks / honors) ---------- */
+.plain-list { list-style: none; padding: 0; margin: 0; }
+.plain-list li { padding: 9px 0 9px 26px; position: relative; border-bottom: 1px solid var(--border); font-size: 15px; }
+.plain-list li:last-child { border-bottom: none; }
+.plain-list li::before { content: ""; position: absolute; left: 4px; top: 18px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
-p.caption2 {
-  color: #9b9b9b;
-  text-align: left;
-  width: 800px;
-}
+/* ---------- Footer ---------- */
+.footer { text-align: center; margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+.footer a { color: var(--muted); text-decoration: underline; }
+.footer .map { display: flex; justify-content: center; margin-bottom: 16px; }
 
-#header_img {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}
-
-a:link,
-a:visited {
-  color: #1367a7;
-  text-decoration: none;
-}
-
-
-#demo_pic {
-  position: relative;
-  left: 15px;
-  right: 10px;
-  height: 150px;
-  top: 10px;
-}
-
-#news_pic {
-  position: relative;
-  margin: 8px;
-  height: 60px;
-  top: 10px;
-  bottom: 10px;
-  border-radius: 10px;
-  /* border-style: solid;
-  border-color: #666666;
-  border-width: 1px; */
-}
-
-.fa-stack[data-count]:after {
-  position: absolute;
-  right: 0%;
-  left: 0%;
-  top: 110%;
-  bottom: -40%;
-  content: attr(data-count);
-  font-size: 30%;
-  padding: 0.6em;
-  border-radius: 999px;
-  line-height: 0.75em;
-  color: white;
-  background: rgba(255, 0, 0, 0.8);
-  text-align: center;
-  min-width: 2em;
-  font-family: "Optima Bold";
-  font-weight: bold;
-}
-
-@media screen and (min-width: 1200px) {
-  #school_logo {
-    position: absolute;
-    left: 700px;
-    height: 90px;
-  }
-
-  #research_logo {
-    position: absolute;
-    left: 700px;
-    height: 100px;
-  }
-  #other_logo {
-    position: absolute;
-    left: 700px;
-    height: 100px;
-  }
-  #square_logo {
-    position: absolute;
-    left: 650px;
-    height: 100px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  #school_logo {
-    position: absolute;
-    visibility: hidden;
-    display: none;
-    left: 700px;
-    height: 100px;
-  }
-  #research_logo {
-    position: absolute;
-    visibility: hidden;
-    display: none;
-    left: 700px;
-    height: 100px;
-  }
-  #other_logo {
-    position: absolute;
-    visibility: hidden;
-    display: none;
-    left: 700px;
-    height: 100px;
-  }
-  #square_logo {
-    position: absolute;
-    left: 650px;
-    height: 100px;
-  }
-}
-
-/* ICON LIST */
-ul.icon-list {
-  list-style: none;
-  display: block;
-  text-align: center;
-  padding: 0px;
-  width: 720px;
-  /* margin-left: -30px; */
-}
-
-ul.icon-list > a span {
-  border-radius: 10%;
-  margin-left: 3px;
-  margin-right: 3px;
-}
-
-pre {
-  font-size: 14px;
-  padding: 5px;
-  white-space: pre-wrap;       /* Since CSS 2.1 */
-  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;      /* Opera 4-6 */
-  white-space: -o-pre-wrap;    /* Opera 7 */
-  word-wrap: break-word;       /* Internet Explorer 5.5+ */
-}
-
-div.scrollbox {
-  height:120px;
-  width: 100%;
-  margin-left: auto;
-  /* border:3px solid #ccc; */
-  overflow:auto;
-}
-
-hr {
-  border:none;
-  border-top:2px dashed rgba(63, 61, 61, 0.344);
-  color:#fff;
-  background-color:#fff;
-  height:2px;
-  width:100%;
-}
-
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-span.fa-twitter:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-
-  color:#1DA1F2;
-}
-
-span.ai-cv:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
-  color:brown;
-}
-
-span.fa-facebook:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
-  color:#4267B2;
-}
-
-span.fa-file-alt:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
-  color:darkgoldenrod;
-}
-
-span.ai-google-scholar:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
-  color:#4285F4;
-}
-
-span.ai-researchgate:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
-  color:#14d4b4;
-}
-
-span.fa-linkedin:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
-  color:#1DA1F2;
-}
-
-span.fa-youtube:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
-  color:#FF0000;
-}
-
-span.fa-github:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
-  color:#4078c0;
-}
-
-span.fa-bilibili:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
-  color:#08a4d4;
-}
-
-span.fa-zhihu:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
-  color:#2864ff;
-}
-
-span.fa-envelope:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-  
+/* ---------- Responsive ---------- */
+@media (max-width: 680px) {
+  .nav { padding: 0 16px; }
+  .nav-links { gap: 14px; }
+  .nav-links a.hide-sm { display: none; }
+  .hero { flex-direction: column; text-align: center; gap: 20px; padding-top: 36px; }
+  .social { justify-content: center; }
+  .pub { flex-direction: column; gap: 14px; }
+  .pub-thumb { flex: none; }
+  .pub-thumb img, .pub-thumb video { width: 100%; height: 180px; }
+  .wrap { padding: 0 16px 60px; }
 }

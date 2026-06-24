@@ -1,805 +1,536 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hao Li (Leo Li)</title>
-  <link href="./css/style.css" rel="stylesheet" media="all" type="text/css" />
+  <meta name="description" content="Hao Li (Leo Li) — Research Scientist at Ropedia, Inc. Research in 3D Vision, Embodied AI, and Multi-Modal Models." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css" />
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="https://kit.fontawesome.com/bd3becbd8d.js" crossorigin="anonymous"></script>
 
-  <script type="text/javascript">
-    window.onload = choosePic;
-    var myPix = new Array("./images/portrait.jpg");
-    function choosePic() {
-      var randomNum = Math.floor(Math.random() * myPix.length);
-      document.getElementById("myPicture").src = myPix[randomNum];
-    }
-    function lastUpdate() {
-      var x = document.lastModified.substr(0, 10);
-      document.getElementById("demo").innerHTML = x;
-    }
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
+    })();
   </script>
-
-  <script type="text/javascript" src="./js/hidebib.js"></script>
-  <script type="text/javascript" src="./js/loadtxt.js"></script>
 </head>
 
-<body onload="lastUpdate()">
-  <div class="content">
-    <div id="container">
-      <table style="margin: 0 auto; text-align: center; width: 100%">
-        <tr>
-          <td style="text-align: center">
-            <img
-              id="myPicture"
-              src="./images/portrait.jpg"
-              style="border-radius: 20%; width: 300px;"
-              alt="Portrait"
-            />
-          </td>
-          <td>
-            <div id="DocInfo" style="text-align: center;">
-              <div id="intro">
-                <h1>Hao Li (Leo Li)</h1>
-                <a style="color: black" href="https://en.nwpu.edu.cn/">
-                  Northwestern Polytechnical University
-                </a>
-                <br /><br />
-                <a href="mailto:lifugan_10027@outlook.com">
-                  <span
-                    class="fa fa-envelope"
-                    style="color: rgb(59, 59, 63); font-size: 20px"
-                  >
-                    <span style="font-family: Optima Bold">lifugan_10027</span>
-                    <span
-                      class="fa fa-at"
-                      style="color: rgb(59, 59, 63); font-size: 20px"
-                    >
-                      <span style="font-family: Optima Bold">outlook.com</span>
-                    </span>
-                  </span>
-                </a>
-                <br />
-              </div>
-              <br />
-              <a style="color: black" href="https://github.com/lifuguan">
-                <span class="fa fa-github fa-xl"></span>
-              </a>
-              <a
-                style="color: black"
-                href="https://scholar.google.com/citations?user=4dokjDoAAAAJ"
-              >
-                <span class="ai ai-google-scholar fa-xl"></span>
-              </a>
-              <br />
-            </div>
-          </td>
-        </tr>
-      </table>
-      
-      <table>
-        <tr>
-          <td>
-            <br />
-            <h1>Biography</h1>
+<body>
+  <!-- ===== Navbar ===== -->
+  <nav class="nav">
+    <span class="nav-name">Hao Li</span>
+    <div class="nav-links">
+      <a href="#about" class="hide-sm">About</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards" class="hide-sm">Awards</a>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+    </div>
+  </nav>
 
-            I am currently a fourth-year (2022-now) Ph.D. student in the School of Automation at 
-            <a href="https://en.nwpu.edu.cn/">Northwestern Polytechnical University (NPU)</a>,
-            supervised by <a href="https://teacher.nwpu.edu.cn/zdw2006yyy">Prof. Dingwen Zhang</a> and <a href="https://scholar.google.com/citations?user=xrqsoesAAAAJ">Prof. Junwei Han (IEEE Fellow)</a>.
-
-            <span style="color: red;">
-              Currently, I am a Research Scientist at Ropedia, Inc., advised by Prof. <a href="https://liuziwei7.github.io">Ziwei Liu</a>, following my visiting period at <a href="https://www.mmlab-ntu.com/">MMLab, Nanyang Technological University (NTU)</a>.
-            </span><br />
-
-My research interests lie in <u>3D Vision</u>, <u>Embodied AI</u>, and <u>Multi-Modal Model</u>.<br /><br />
-            
-
-            Before that, I was a Research Intern at the LongCat Group, <a href="https://www.meituan.com">Meituan, Inc.</a> (北斗人才计划), advised by Dr. Manyuan Zhang.
-            I also worked as a research intern at
-            <a href="https://stepfun.com">StepFun Inc.</a>, led by <a href="https://openreview.net/profile?id=~Xuanyang_Zhang2">Xuanyang Zhang</a> and <a href="https://www.skicyyu.org/">Dr. Gang Yu</a>.
-            From 2023 to 2024, I worked as a research intern at the Robotcis Team, 
-            <a href="https://www.bytedance.com/">ByteDance AI Lab</a>, under the mentorship of 
-            <a href="https://minghanqin.github.io/">Minghan Qin</a>. I also interned with the VIS, 
-            at <a href="https://vis.baidu.com/#/">Baidu Inc.</a>, guided by 
-            <a href="https://chenming-wu.github.io/">Dr. Chenming Wu</a> and  <a href="https://jingdongwang2017.github.io/">Jingdong Wang (IEEE Fellow)</a>.
-
-            In 2022 to 2023,I was a research intern at <a href="https://www.shlab.org.cn/">Zhejiang Lab</a>, 
-            leading with <a href="https://scholar.google.com/citations?user=PKFAv-cAAAAJ">Prof. Lechao Cheng</a> .
-            <br /><br />
-
-          </td>
-        </tr>
-      </table>
-
-      <div class="logo">
-        <a href="https://en.nwpu.edu.cn/"><img  src="./images/npu.png" /></a>
-        <a href="https://www.ntu.edu.sg/"><img style="border-radius: 0%" src="./images/NTU_Logo.jpg" /></a>
-        <a href="https://www.meituan.com"><img style="border-radius: 0%" src="./images/meituan.png" /></a>
-        <a href="https://www.stepfun.com/"><img style="border-radius: 0%" src="./images/stepfun.png" /></a>
-        <a href="https://bytedance.com"><img  style="border-radius: 0%" src="./images/bytedance-ht.png" /></a>
-        <a href="https://vis.baidu.com"><img style="border-radius: 0%" src="./images/baidu-logo.png" /></a>
-        <a href="https://www.zhejianglab.com"><img style="border-radius: 0%" src="./images/zhejiang lab.png" /></a>
+  <div class="wrap">
+    <!-- ===== Hero ===== -->
+    <section id="about" class="hero">
+      <img class="hero-photo" src="./images/portrait.jpg" alt="Portrait of Hao Li" />
+      <div>
+        <h1>Hao Li <span class="alias">(Leo Li)</span></h1>
+        <p class="role">3D Vision · Embodied AI · Multi-Modal Models</p>
+        <p class="affil">
+          Research Scientist, Ropedia, Inc.<br />
+          Advised by <a href="https://liuziwei7.github.io">Prof. Ziwei Liu</a>
+        </p>
+        <div class="social">
+          <a class="email" href="mailto:lifugan_10027@outlook.com"><i class="fa fa-envelope"></i> lifugan_10027@outlook.com</a>
+          <a href="https://github.com/lifuguan" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://scholar.google.com/citations?user=4dokjDoAAAAJ" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        </div>
       </div>
+    </section>
 
+    <!-- ===== Biography ===== -->
+    <section id="bio" class="bio">
+      <h2 class="section-title">Biography</h2>
+      <p>
+        I am a <span class="hl">Research Scientist</span> at Ropedia, Inc., advised by Prof.
+        <a href="https://liuziwei7.github.io">Ziwei Liu</a>, following my visiting period at
+        <a href="https://www.mmlab-ntu.com/">MMLab, Nanyang Technological University (NTU)</a>.
+        I am also a Ph.D. student (2022&ndash;now) in the School of Automation at
+        <a href="https://en.nwpu.edu.cn/">Northwestern Polytechnical University (NPU)</a>,
+        supervised by <a href="https://teacher.nwpu.edu.cn/zdw2006yyy">Prof. Dingwen Zhang</a> and
+        <a href="https://scholar.google.com/citations?user=xrqsoesAAAAJ">Prof. Junwei Han (IEEE Fellow)</a>.
+      </p>
+      <p>
+        My research interests lie in <span class="hl">3D Vision</span>, <span class="hl">Embodied AI</span>, and <span class="hl">Multi-Modal Models</span>.
+      </p>
+      <p>
+        Before that, I was a Research Intern at the LongCat Group, <a href="https://www.meituan.com">Meituan, Inc.</a> (北斗人才计划), advised by Dr. Manyuan Zhang.
+        I also worked as a research intern at <a href="https://stepfun.com">StepFun Inc.</a>, led by
+        <a href="https://openreview.net/profile?id=~Xuanyang_Zhang2">Xuanyang Zhang</a> and <a href="https://www.skicyyu.org/">Dr. Gang Yu</a>.
+        From 2023 to 2024, I worked as a research intern at the Robotics Team,
+        <a href="https://www.bytedance.com/">ByteDance AI Lab</a>, under the mentorship of
+        <a href="https://minghanqin.github.io/">Minghan Qin</a>. I also interned with the VIS at
+        <a href="https://vis.baidu.com/#/">Baidu Inc.</a>, guided by
+        <a href="https://chenming-wu.github.io/">Dr. Chenming Wu</a> and
+        <a href="https://jingdongwang2017.github.io/">Jingdong Wang (IEEE Fellow)</a>.
+        In 2022 to 2023, I was a research intern at <a href="https://www.shlab.org.cn/">Zhejiang Lab</a>,
+        leading with <a href="https://scholar.google.com/citations?user=PKFAv-cAAAAJ">Prof. Lechao Cheng</a>.
+      </p>
 
-      <h1>News</h1>
-      [2026/06] <a href="https://ropedia.github.io/S-Agent">S-Agent</a> released! &#127881;<br>
-      [2026/06] <a href="https://liuff19.github.io/Spatial-TTT/">Spatial-TTT</a> got accepted by <strong style="color: brown">ECCV 2026</strong>! &#127881;<br>
-      [2026/05] <a href="https://visionary-laboratory.github.io/holi-spatial/">Holi-Spatial</a> got accepted by <strong style="color: brown">ICML 2026</strong> as <strong style="color: brown">Oral</strong>! &#127881;<br>
-      [2026/03] <a href="https://livioni.github.io/OmniVGGT-official/">OmniVGGT</a> got accepted by <strong style="color: brown">CVPR 2026</strong> as <strong style="color: brown">Highlight</strong>! &#127881;<br>
-      [2026/01] <a href="https://lifuguan.github.io/IGGT_official/">IGGT</a> and <a href="https://falcon-vla.github.io/">From Spatial to Actions</a> got accepted by <strong style="color: brown">ICLR 2026</strong>! &#127881;<br>
-      [2026/01] Joining Ropedia, Inc. as Research Scientist, advised by <a href="https://liuziwei7.github.io">Prof. Ziwei Liu</a>!<br>
-      [2025/08] Joining LongCat Group, <a href="https://www.meituan.com">Meituan, Inc.</a> as Research Intern (北斗人才计划), advised by Dr. Manyuan Zhang!<br>
-      [2025/06] <a href="https://arxiv.org/abs/2511.00033">STRIDER</a> got accepted by <strong style="color: brown">NeurIPS 2025</strong>! &#127881;<br>
-      [2025/06] <a href="https://liuff19.github.io/LangScene-X/">LangScene-X</a> and <a href="https://lifuguan.github.io/CityGS-X/">CityGS-X</a> got accepted by <strong style="color: brown">ICCV 2025</strong>! &#127881;<br>
-      [2025/05] <a href="https://arxiv.org/abs/2505.07747">Step1X-3D</a> released by StepFun! &#127881;<br>
-      [2025/04] Visiting student at <a href="https://www.ntu.edu.sg">NTU</a>, supervised by <a href="https://liuziwei7.github.io">Prof. Ziwei Liu</a>!<br>
-      [2025/03] <a href="https://3d-aigc.github.io/VDG/">VDG</a> got accepted by <strong style="color: brown">IEEE RA-L</strong>! &#127881;<br>
-      [2025/02] <a href="https://arxiv.org/abs/2411.12309">DGTR</a> got accepted by <strong style="color: brown">ICRA 2025</strong>! &#127881;<br>
-      [2025/01] Joining AIGC Group, StepFun Inc., led by <a href="https://openreview.net/profile?id=~Xuanyang_Zhang2">Xuanyang Zhang</a> and <a href="https://www.skicyyu.org/">Dr. Gang Yu</a>!<br>
-      [2024/10] <a href="https://3d-aigc.github.io/XLD">XLD</a> got accepted by <strong style="color: brown">3DV 2025</strong>! &#127881;<br>
-      [2024/08] Joining ByteDance AI Lab, led by <a href="https://minghanqin.github.io/">Minghan Qin</a>!<br>
-      [2024/08] Invited talk on <a href="https://mp.weixin.qq.com/s/rGh-zI0zYaJKZ0EWIjyy7w">GAMES Webinar</a>.<br>
-      [2024/07] <a href="https://3d-aigc.github.io/GGRt">GGRt</a> got accepted by <strong style="color: brown">ECCV 2024</strong>!<br>
-      [2024/02] <a href="https://github.com/lifuguan/gp-nerf">GP-NeRF</a> got accepted by <strong style="color: brown">CVPR 2024</strong> and selected as <strong style="color: brown">Highlight (top 3.8%)</strong>! &#127881;<br>
-      [2024/02] <a href="https://ltgccode.github.io/">LTGC</a> got accepted by <strong style="color: brown">CVPR 2024</strong> and selected as <strong style="color: brown">Oral (top 0.8%)</strong>! &#127881;<br>
-      [2024/01] Invited talk on <a href="https://mp.weixin.qq.com/s/htNrZaDuhwez03kqJLwjpg">3D视觉工坊</a>.<br>
-      [2023/12] Joining VIS, Baidu, Inc. as Research Intern, led by <a href="https://chenming-wu.github.io/">Dr. Chenming Wu</a> and  <a href="https://jingdongwang2017.github.io/">Jingdong Wang (IEEE Fellow)</a>!<br>
-      [2023/11] <a href="https://ieeexplore.ieee.org/document/10367821">ASDT</a> got accepted by <strong style="color: brown">TIP 2024</strong>! &#127881;<br>
-      [2023/11] <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Li_Boosting_Low-Data_Instance_Segmentation_by_Unsupervised_Pre-Training_With_Saliency_Prompt_CVPR_2023_paper.pdf">Saliency Prompt</a> got accepted by <strong style="color: brown">CVPR 2023</strong>! &#127881;<br>
-      [2023/12] Joining Zhejiang Lab as Research Intern, led by <a href="https://scholar.google.com/citations?user=PKFAv-cAAAAJ">Prof. Lechao Cheng</a>!<br>
-      <br /><br />
+      <div class="logos">
+        <a href="https://en.nwpu.edu.cn/"><img src="./images/npu.png" alt="NPU" /></a>
+        <a href="https://www.ntu.edu.sg/"><img src="./images/NTU_Logo.jpg" alt="NTU" /></a>
+        <a href="https://www.meituan.com"><img src="./images/meituan.png" alt="Meituan" /></a>
+        <a href="https://www.stepfun.com/"><img src="./images/stepfun.png" alt="StepFun" /></a>
+        <a href="https://bytedance.com"><img src="./images/bytedance-ht.png" alt="ByteDance" /></a>
+        <a href="https://vis.baidu.com"><img src="./images/baidu-logo.png" alt="Baidu" /></a>
+        <a href="https://www.zhejianglab.com"><img src="./images/zhejiang lab.png" alt="Zhejiang Lab" /></a>
+      </div>
+    </section>
 
-      <h1 id="citation">Publications</h1>
-      
-      <table class="pub_table">
+    <!-- ===== News ===== -->
+    <section id="news">
+      <h2 class="section-title">News</h2>
+      <div class="news">
+        <div class="news-item"><span class="news-date">2026/06</span><span class="news-text"><a href="https://ropedia.github.io/S-Agent">S-Agent</a> released! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2026/06</span><span class="news-text"><a href="https://liuff19.github.io/Spatial-TTT/">Spatial-TTT</a> got accepted by <b>ECCV 2026</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2026/05</span><span class="news-text"><a href="https://visionary-laboratory.github.io/holi-spatial/">Holi-Spatial</a> got accepted by <b>ICML 2026</b> as <b>Oral</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2026/03</span><span class="news-text"><a href="https://livioni.github.io/OmniVGGT-official/">OmniVGGT</a> got accepted by <b>CVPR 2026</b> as <b>Highlight</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2026/01</span><span class="news-text"><a href="https://lifuguan.github.io/IGGT_official/">IGGT</a> and <a href="https://falcon-vla.github.io/">From Spatial to Actions</a> got accepted by <b>ICLR 2026</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2026/01</span><span class="news-text">Joining Ropedia, Inc. as Research Scientist, advised by <a href="https://liuziwei7.github.io">Prof. Ziwei Liu</a>!</span></div>
+        <div class="news-item"><span class="news-date">2025/08</span><span class="news-text">Joining LongCat Group, <a href="https://www.meituan.com">Meituan, Inc.</a> as Research Intern (北斗人才计划), advised by Dr. Manyuan Zhang!</span></div>
+        <div class="news-item"><span class="news-date">2025/06</span><span class="news-text"><a href="https://arxiv.org/abs/2511.00033">STRIDER</a> got accepted by <b>NeurIPS 2025</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2025/06</span><span class="news-text"><a href="https://liuff19.github.io/LangScene-X/">LangScene-X</a> and <a href="https://lifuguan.github.io/CityGS-X/">CityGS-X</a> got accepted by <b>ICCV 2025</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2025/05</span><span class="news-text"><a href="https://arxiv.org/abs/2505.07747">Step1X-3D</a> released by StepFun! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2025/04</span><span class="news-text">Visiting student at <a href="https://www.ntu.edu.sg">NTU</a>, supervised by <a href="https://liuziwei7.github.io">Prof. Ziwei Liu</a>!</span></div>
+        <div class="news-item"><span class="news-date">2025/03</span><span class="news-text"><a href="https://3d-aigc.github.io/VDG/">VDG</a> got accepted by <b>IEEE RA-L</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2025/02</span><span class="news-text"><a href="https://arxiv.org/abs/2411.12309">DGTR</a> got accepted by <b>ICRA 2025</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2025/01</span><span class="news-text">Joining AIGC Group, StepFun Inc., led by <a href="https://openreview.net/profile?id=~Xuanyang_Zhang2">Xuanyang Zhang</a> and <a href="https://www.skicyyu.org/">Dr. Gang Yu</a>!</span></div>
+        <div class="news-item"><span class="news-date">2024/10</span><span class="news-text"><a href="https://3d-aigc.github.io/XLD">XLD</a> got accepted by <b>3DV 2025</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2024/08</span><span class="news-text">Joining ByteDance AI Lab, led by <a href="https://minghanqin.github.io/">Minghan Qin</a>!</span></div>
+        <div class="news-item"><span class="news-date">2024/08</span><span class="news-text">Invited talk on <a href="https://mp.weixin.qq.com/s/rGh-zI0zYaJKZ0EWIjyy7w">GAMES Webinar</a>.</span></div>
+        <div class="news-item"><span class="news-date">2024/07</span><span class="news-text"><a href="https://3d-aigc.github.io/GGRt">GGRt</a> got accepted by <b>ECCV 2024</b>!</span></div>
+        <div class="news-item"><span class="news-date">2024/02</span><span class="news-text"><a href="https://github.com/lifuguan/gp-nerf">GP-NeRF</a> got accepted by <b>CVPR 2024</b> and selected as <b>Highlight (top 3.8%)</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2024/02</span><span class="news-text"><a href="https://ltgccode.github.io/">LTGC</a> got accepted by <b>CVPR 2024</b> and selected as <b>Oral (top 0.8%)</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2024/01</span><span class="news-text">Invited talk on <a href="https://mp.weixin.qq.com/s/htNrZaDuhwez03kqJLwjpg">3D视觉工坊</a>.</span></div>
+        <div class="news-item"><span class="news-date">2023/12</span><span class="news-text">Joining VIS, Baidu, Inc. as Research Intern, led by <a href="https://chenming-wu.github.io/">Dr. Chenming Wu</a> and <a href="https://jingdongwang2017.github.io/">Jingdong Wang (IEEE Fellow)</a>!</span></div>
+        <div class="news-item"><span class="news-date">2023/12</span><span class="news-text">Joining Zhejiang Lab as Research Intern, led by <a href="https://scholar.google.com/citations?user=PKFAv-cAAAAJ">Prof. Lechao Cheng</a>!</span></div>
+        <div class="news-item"><span class="news-date">2023/11</span><span class="news-text"><a href="https://ieeexplore.ieee.org/document/10367821">ASDT</a> got accepted by <b>TIP 2024</b>! &#127881;</span></div>
+        <div class="news-item"><span class="news-date">2023/11</span><span class="news-text"><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Li_Boosting_Low-Data_Instance_Segmentation_by_Unsupervised_Pre-Training_With_Saliency_Prompt_CVPR_2023_paper.pdf">Saliency Prompt</a> got accepted by <b>CVPR 2023</b>! &#127881;</span></div>
+      </div>
+    </section>
 
-        <!-- ================= 2026 ================= -->
-        <tr id="sagent2026">
-          <td class="pub_td1">
-            <video autoplay loop muted playsinline width="180" height="120" style="display: block; margin: 0 auto; border-radius: 5px;">
-              <source src="images/s-agent_video.mp4" type="video/mp4">
-            </video>
-          </td>
-          <td class="pub_td2">
-            <b>S-Agent: Spatial Tool Use Elicits Reasoning for Spatial Intelligence</b>
-            <br /><br />
-            <u>Yalun Dai†</u>,
-            <strong>Hao Li†</strong> (Project Lead), <u>Shulin Tian</u>, <u>Runmao Yao</u>, <u>Fangzhou Hong</u>, <u>Zhaoxi Chen</u>, <u>Leonardo Guibas</u>, <u>Ziwei Liu</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">arXiv 2026</strong></i>
-            </div>
-            <a class="box" href="https://ropedia.github.io/S-Agent">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2606.20515">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/Ropedia/S-Agent">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+    <!-- ===== Publications ===== -->
+    <section id="publications">
+      <h2 class="section-title">Publications</h2>
+      <p class="legend">
+        <span class="me" style="color:var(--text);font-weight:600;">Bold</span> = me &nbsp;·&nbsp;
+        &dagger; equal contribution &nbsp;·&nbsp;
+        # corresponding author &nbsp;·&nbsp;
+        <span class="pub-tag lead"><i class="fas fa-star"></i> Project Lead</span> &nbsp;·&nbsp;
+        <span class="pub-tag honor">Oral</span> / <span class="pub-tag honor">Highlight</span> selected for presentation &nbsp;·&nbsp;
+        <span class="pub-tag hf">&#129303; HF Daily Paper</span> featured on Hugging Face
+      </p>
 
-        <tr id="holispatial2026">
-          <td class="pub_td1">
-            <video autoplay loop muted playsinline width="180" height="120" style="display: block; margin: 0 auto; border-radius: 5px;">
-              <source src="images/holi-spatial_video.mp4" type="video/mp4">
-            </video>
-          </td>
-          <td class="pub_td2">
-            <b>Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence</b>
-            <br /><br />
-            <u>Yuanyuan Gao†</u>,
-            <strong>Hao Li†</strong> (Project Lead), <u>Yifei Liu</u>, <u>Xinhao Ji</u>, <u>Yuning Gong</u>, <u>Yiyi Liao</u>, <u>Fangfu Liu</u>, <u>Manyuan Zhang</u>, <u>Yi Yang</u>, <u>Dan Xu</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">ICML 2026 - Oral</strong></i>
-            </div>
-            <a class="box" href="https://visionary-laboratory.github.io/holi-spatial/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2603.07660">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/Visionary-Laboratory/holi-spatial">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- ===== 2026 ===== -->
+      <!-- S-Agent -->
+      <article class="pub" id="sagent2026">
+        <div class="pub-thumb"><video autoplay loop muted playsinline><source src="images/s-agent_video.mp4" type="video/mp4" /></video></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">arXiv 2026</span><span class="pub-tag lead"><i class="fas fa-star"></i> Project Lead</span></div>
+          <h3 class="pub-title">S-Agent: Spatial Tool Use Elicits Reasoning for Spatial Intelligence</h3>
+          <p class="pub-authors">Yalun Dai&dagger;, <span class="me">Hao Li&dagger;</span>, Shulin Tian, Runmao Yao, Fangzhou Hong, Zhaoxi Chen, Leonardo Guibas, Ziwei Liu</p>
+          <div class="pub-links">
+            <a href="https://ropedia.github.io/S-Agent"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2606.20515"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/Ropedia/S-Agent"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="omnivggt2026">
-          <td class="pub_td1">
-            <img
-              src="images/omnivggt.png"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="OmniVGGT Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>OmniVGGT: Omni-Modality Driven Visual Geometry Grounded Transformer</b>
-            <br /><br />
-            <u>Haosong Peng†</u>,
-            <strong>Hao Li†</strong> (Project Lead), <u>Yalun Dai</u>, <u>Yushi Lan</u>, <u>Yihang Luo</u>, <u>Tianyu Qi</u>, <u>Yufeng Zhan</u>, <u>Junfei Zhang</u>, <u>Wenchao Xu</u>, <u>Ziwei Liu</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">CVPR 2026 - Highlight</strong></i>
-            </div>
-            <a class="box" href="https://livioni.github.io/OmniVGGT-official/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2511.10560">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/Livioni/OmniVGGT-official">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- Holi-Spatial -->
+      <article class="pub" id="holispatial2026">
+        <div class="pub-thumb"><video autoplay loop muted playsinline><source src="images/holi-spatial_video.mp4" type="video/mp4" /></video></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">ICML 2026</span><span class="pub-tag honor">Oral</span><span class="pub-tag lead"><i class="fas fa-star"></i> Project Lead</span></div>
+          <h3 class="pub-title">Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence</h3>
+          <p class="pub-authors">Yuanyuan Gao&dagger;, <span class="me">Hao Li&dagger;</span>, Yifei Liu, Xinhao Ji, Yuning Gong, Yiyi Liao, Fangfu Liu, Manyuan Zhang, Yi Yang, Dan Xu</p>
+          <div class="pub-links">
+            <a href="https://visionary-laboratory.github.io/holi-spatial/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2603.07660"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/Visionary-Laboratory/holi-spatial"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="iggt2026">
-          <td class="pub_td1">
-            <video autoplay loop muted playsinline width="180" height="120" style="display: block; margin: 0 auto; border-radius: 5px;">
-              <source src="images/iggt_video.mp4" type="video/mp4">
-            </video>
-          </td>
-          <td class="pub_td2">
-            <b>IGGT: Instance-Grounded Geometry Transformer for Semantic 3D Reconstruction</b>
-            <br /><br />
-            <strong>Hao Li</strong>, <u>Zhengyu Zou</u>, <u>Fangfu Liu</u>, <u>Xuanyang Zhang</u>, <u>Fangzhou Hong</u>, <u>Yukang Cao</u>, <u>Yushi Lan</u>, <u>Manyuan Zhang</u>, <u>Gang Yu</u>, <u>Dingwen Zhang</u>, <u>Ziwei Liu</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">ICLR 2026</strong></i>
-            </div>
-            <a class="box" href="https://lifuguan.github.io/IGGT_official/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2510.22706">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/lifuguan/IGGT_official">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- OmniVGGT -->
+      <article class="pub" id="omnivggt2026">
+        <div class="pub-thumb"><img src="images/omnivggt.png" alt="OmniVGGT" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">CVPR 2026</span><span class="pub-tag honor">Highlight</span><span class="pub-tag lead"><i class="fas fa-star"></i> Project Lead</span></div>
+          <h3 class="pub-title">OmniVGGT: Omni-Modality Driven Visual Geometry Grounded Transformer</h3>
+          <p class="pub-authors">Haosong Peng&dagger;, <span class="me">Hao Li&dagger;</span>, Yalun Dai, Yushi Lan, Yihang Luo, Tianyu Qi, Yufeng Zhan, Junfei Zhang, Wenchao Xu, Ziwei Liu</p>
+          <div class="pub-links">
+            <a href="https://livioni.github.io/OmniVGGT-official/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2511.10560"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/Livioni/OmniVGGT-official"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="falcon2026">
-          <td class="pub_td1">
-            <img
-              src="images/from spatial to action.png"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="From Spatial to Actions Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors</b>
-            <br /><br />
-            <u>Zhengshen Zhang†</u>,
-            <strong>Hao Li†</strong> (Project Lead), <u>Yalun Dai</u>, <u>Zhengbang Zhu</u>, <u>Lei Zhou</u>, <u>Chenchen Liu</u>, <u>Dong Wang</u>, <u>Francis E. H. Tay</u>, <u>Sijin Chen</u>, <u>Ziwei Liu</u>, <u>Yuxiao Liu</u>, <u>Xinghang Li</u>, <u>Pan Zhou</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">ICLR 2026</strong></i>
-            </div>
-            <a class="box" href="https://falcon-vla.github.io/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2510.17439">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/FALCON-VLA/FALCON">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- IGGT -->
+      <article class="pub" id="iggt2026">
+        <div class="pub-thumb"><video autoplay loop muted playsinline><source src="images/iggt_video.mp4" type="video/mp4" /></video></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">ICLR 2026</span></div>
+          <h3 class="pub-title">IGGT: Instance-Grounded Geometry Transformer for Semantic 3D Reconstruction</h3>
+          <p class="pub-authors"><span class="me">Hao Li</span>, Zhengyu Zou, Fangfu Liu, Xuanyang Zhang, Fangzhou Hong, Yukang Cao, Yushi Lan, Manyuan Zhang, Gang Yu, Dingwen Zhang, Ziwei Liu</p>
+          <div class="pub-links">
+            <a href="https://lifuguan.github.io/IGGT_official/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2510.22706"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/lifuguan/IGGT_official"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="spatialttt2026">
-          <td class="pub_td1">
-            <img
-              src="images/spatial-ttt.png"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="Spatial-TTT Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training</b>
-            <br /><br />
-            <u>Fangfu Liu</u>, <u>Di Wu</u>, <u>Jiawei Chi</u>, <u>Yue Cai</u>, <u>Yu-Hsiang Hung</u>, <u>Xiaofeng Yu</u>,
-            <strong>Hao Li</strong>, <u>Hao Hu</u>, <u>Yongming Rao</u>, <u>Yueqi Duan</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">ECCV 2026</strong></i>
-            </div>
-            <a class="box" href="https://liuff19.github.io/Spatial-TTT/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2603.12255">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a class="box" href="https://youtu.be/U7gLdwCj6tY">
-              <i class="fa fa-video" aria-hidden="true">&nbsp;</i>Video&nbsp;
-            </a>
-            <a href="https://github.com/THU-SI/Spatial-TTT">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- From Spatial to Actions -->
+      <article class="pub" id="falcon2026">
+        <div class="pub-thumb"><img src="images/from spatial to action.png" alt="From Spatial to Actions" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">ICLR 2026</span><span class="pub-tag lead"><i class="fas fa-star"></i> Project Lead</span></div>
+          <h3 class="pub-title">From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors</h3>
+          <p class="pub-authors">Zhengshen Zhang&dagger;, <span class="me">Hao Li&dagger;</span>, Yalun Dai, Zhengbang Zhu, Lei Zhou, Chenchen Liu, Dong Wang, Francis E. H. Tay, Sijin Chen, Ziwei Liu, Yuxiao Liu, Xinghang Li, Pan Zhou</p>
+          <div class="pub-links">
+            <a href="https://falcon-vla.github.io/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2510.17439"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/FALCON-VLA/FALCON"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="li2024langsurf">
-          <td class="pub_td1">
-            <video autoplay loop muted width="180" height="120" style="display: block; margin: 0 auto;">
-              <source src="./images/langsurf.mp4" type="video/mp4">
-            </video>
-          </td>
-          <td class="pub_td2">
-            <b>LangSurf: Language-Embedded Surface Gaussians for 3D Scene Understanding</b>
-            <br /><br />
-            <strong>Hao Li</strong>,
-            <a href="https://qinminghan.github.io/">Minghan Qin#</a>,
-            <u>Zhengyu Zou</u>,
-            <u>Diqi He</u>,
-            <u>Bohan Li</u>,
-            <u>Bingquan Dai</u>,
-            <u>Dingwen Zhang#</u>,
-            <u>Junwei Han</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">IEEE T-PAMI 2026</strong></i>
-            </div>
-            <a class="box" href="https://langsurf.github.io/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2412.17635">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a class="box" href="https://youtu.be/jU83kljQaR0">
-              <i class="fa fa-video" aria-hidden="true">&nbsp;</i>Video&nbsp;
-            </a>
-            <a href="https://github.com/lifuguan/LangSurf">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- Spatial-TTT -->
+      <article class="pub" id="spatialttt2026">
+        <div class="pub-thumb"><img src="images/spatial-ttt.png" alt="Spatial-TTT" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">ECCV 2026</span></div>
+          <h3 class="pub-title">Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training</h3>
+          <p class="pub-authors">Fangfu Liu, Di Wu, Jiawei Chi, Yue Cai, Yu-Hsiang Hung, Xiaofeng Yu, <span class="me">Hao Li</span>, Hao Hu, Yongming Rao, Yueqi Duan</p>
+          <div class="pub-links">
+            <a href="https://liuff19.github.io/Spatial-TTT/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2603.12255"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://youtu.be/U7gLdwCj6tY"><i class="fa fa-video"></i> Video</a>
+            <a href="https://github.com/THU-SI/Spatial-TTT"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="egotools2026">
-          <td class="pub_td2" colspan="2">
-            <b>EgoTools: Benchmarking Physical Logic and Tool Affordances in Egocentric Videos</b>
-            <br /><br />
-            <u>S-Lab Team</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">NeurIPS 2026 - In Preparation</strong></i>
-            </div>
-          </td>
-        </tr>
+      <!-- LangSurf -->
+      <article class="pub" id="li2024langsurf">
+        <div class="pub-thumb"><video autoplay loop muted playsinline><source src="./images/langsurf.mp4" type="video/mp4" /></video></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">IEEE T-PAMI 2026</span></div>
+          <h3 class="pub-title">LangSurf: Language-Embedded Surface Gaussians for 3D Scene Understanding</h3>
+          <p class="pub-authors"><span class="me">Hao Li</span>, <a href="https://qinminghan.github.io/">Minghan Qin#</a>, Zhengyu Zou, Diqi He, Bohan Li, Bingquan Dai, Dingwen Zhang#, Junwei Han</p>
+          <div class="pub-links">
+            <a href="https://langsurf.github.io/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2412.17635"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://youtu.be/jU83kljQaR0"><i class="fa fa-video"></i> Video</a>
+            <a href="https://github.com/lifuguan/LangSurf"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <!-- ================= 2025 ================= -->
-        <tr id="step1x3d2025">
-          <td class="pub_td1">
-            <img
-              src="images/step1x-3d-teaser.png"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="Step1X-3D Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>Step1X-3D: Towards High-Fidelity and Controllable Generation of Textured 3D Assets</b>
-            <br /><br />
-            <u>Weiyu Li</u>, <u>Xuanyang Zhang</u>, <u>Zheng Sun</u>, <u>Di Qi</u>,
-            <strong>Hao Li</strong>, <u>Weiwei Cheng</u>, <u>Wanggui Cai</u>, <u>Shun Wu</u>, <u>Jie Liu</u>, <u>Ziwei Wang</u>, <u>Gang Yu</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">Tech Report 2025</strong></i>
-            </div>
-            <a class="box" href="https://step-1x.github.io/step1x-3d.github.io/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2505.07747">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/stepfun-ai/Step1X-3D">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- EgoTools -->
+      <article class="pub" id="egotools2026">
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">NeurIPS 2026 · In Preparation</span></div>
+          <h3 class="pub-title">EgoTools: Benchmarking Physical Logic and Tool Affordances in Egocentric Videos</h3>
+          <p class="pub-authors">S-Lab Team</p>
+        </div>
+      </article>
 
-        <tr id="exgs2025">
-          <td class="pub_td2" colspan="2">
-            <b>ExGS: Extreme 3D Gaussian Compression with Diffusion Priors</b>
-            <br /><br />
-            <u>Jiaqi Chen</u>, <u>Xinhao Ji</u>, <u>Yuanyuan Gao</u>,
-            <strong>Hao Li</strong>, <u>Yuning Gong</u>, <u>Yifei Liu</u>, <u>Zhihang Zhong</u>, <u>Dingwen Zhang</u>, <u>Dan Xu</u>, <u>Xiao Sun</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">arXiv 2025</strong></i>
-            </div>
-            <a class="box" href="https://arxiv.org/abs/2509.24758">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/chenttt2001/ExGS">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- ===== 2025 ===== -->
+      <!-- Step1X-3D -->
+      <article class="pub" id="step1x3d2025">
+        <div class="pub-thumb"><img src="images/step1x-3d-teaser.png" alt="Step1X-3D" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">Tech Report 2025</span></div>
+          <h3 class="pub-title">Step1X-3D: Towards High-Fidelity and Controllable Generation of Textured 3D Assets</h3>
+          <p class="pub-authors">Weiyu Li, Xuanyang Zhang, Zheng Sun, Di Qi, <span class="me">Hao Li</span>, Weiwei Cheng, Wanggui Cai, Shun Wu, Jie Liu, Ziwei Wang, Gang Yu</p>
+          <div class="pub-links">
+            <a href="https://step-1x.github.io/step1x-3d.github.io/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2505.07747"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/stepfun-ai/Step1X-3D"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="strider2025">
-          <td class="pub_td1">
-            <img
-              src="images/stride.jpg"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="STRIDER Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>STRIDER: Navigation via Instruction-Aligned Structural Decision Space Optimization</b>
-            <br /><br />
-            <u>Diqi He</u>, <u>Xuehao Gao</u>,
-            <strong>Hao Li</strong>, <u>Junwei Han</u>, <u>Dingwen Zhang</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">NeurIPS 2025</strong></i>
-            </div>
-            <a class="box" href="https://arxiv.org/abs/2511.00033">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/diqihe666/STRIDER-Nav">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- ExGS -->
+      <article class="pub" id="exgs2025">
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">arXiv 2025</span></div>
+          <h3 class="pub-title">ExGS: Extreme 3D Gaussian Compression with Diffusion Priors</h3>
+          <p class="pub-authors">Jiaqi Chen, Xinhao Ji, Yuanyuan Gao, <span class="me">Hao Li</span>, Yuning Gong, Yifei Liu, Zhihang Zhong, Dingwen Zhang, Dan Xu, Xiao Sun</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2509.24758"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/chenttt2001/ExGS"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="langscenex2025">
-          <td class="pub_td1">
-            <img
-              src="images/langscenex.png"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="LangScene-X Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>LangScene-X: Reconstruct Generalizable 3D Language-Embedded Scenes with TriMap Video Diffusion</b>
-            <br /><br />
-            <u>Fangfu Liu†</u>,
-            <strong>Hao Li†</strong>, <u>Jiawei Chi</u>, <u>Hanyang Wang</u>, <u>Minghui Yang</u>, <u>Fudong Wang</u>, <u>Yueqi Duan</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">ICCV 2025</strong></i>
-            </div>
-            <a class="box" href="https://liuff19.github.io/LangScene-X/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2507.02813">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/liuff19/LangScene-X">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- STRIDER -->
+      <article class="pub" id="strider2025">
+        <div class="pub-thumb"><img src="images/stride.jpg" alt="STRIDER" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">NeurIPS 2025</span></div>
+          <h3 class="pub-title">STRIDER: Navigation via Instruction-Aligned Structural Decision Space Optimization</h3>
+          <p class="pub-authors">Diqi He, Xuehao Gao, <span class="me">Hao Li</span>, Junwei Han, Dingwen Zhang</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2511.00033"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/diqihe666/STRIDER-Nav"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="citygs-x2025">
-          <td class="pub_td1">
-            <img
-              src="images/CityGS-X.jpg"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="CityGS-X Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>CityGS-X: A Scalable Architecture for Efficient and Geometrically Accurate Large-Scale Scene Reconstruction</b>
-            <br /><br />
-            <u>Yuanyuan Gao†</u>,
-            <strong>Hao Li†</strong>, <u>Jiaqi Chen</u>, <u>Zhihang Zhong</u>, <u>Zhengyu Zou</u>, <u>Dingwen Zhang</u>, <u>Xiao Sun</u>, <u>Junwei Han</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">ICCV 2025</strong></i>
-            </div>
-            <a class="box" href="https://lifuguan.github.io/CityGS-X/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2503.23044">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/gyy456/CityGS-X">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- LangScene-X -->
+      <article class="pub" id="langscenex2025">
+        <div class="pub-thumb"><img src="images/langscenex.png" alt="LangScene-X" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">ICCV 2025</span></div>
+          <h3 class="pub-title">LangScene-X: Reconstruct Generalizable 3D Language-Embedded Scenes with TriMap Video Diffusion</h3>
+          <p class="pub-authors">Fangfu Liu&dagger;, <span class="me">Hao Li&dagger;</span>, Jiawei Chi, Hanyang Wang, Minghui Yang, Fudong Wang, Yueqi Duan</p>
+          <div class="pub-links">
+            <a href="https://liuff19.github.io/LangScene-X/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2507.02813"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/liuff19/LangScene-X"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="dgtr2024">
-          <td class="pub_td1">
-            <img
-              src="images/dgtr.png"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="DGTR Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>DGTR: Distributed Gaussian Turbo-Reconstruction for Sparse-View Vast Scenes</b>
-            <br /><br />
-            <strong>Hao Li</strong>, <u>Yuanyuan Gao</u>, <u>Haosong Peng</u>, <u>Chenming Wu</u>, <u>Weicai Ye</u>, <u>Yufeng Zhan</u>, <u>Chen Zhao</u>, <u>Dingwen Zhang</u>, <u>Jingdong Wang</u>, <u>Junwei Han</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">ICRA 2025</strong></i>
-            </div>
-            <a class="box" href="https://3d-aigc.github.io/DGTR/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2411.12309">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-          </td>
-        </tr>
+      <!-- CityGS-X -->
+      <article class="pub" id="citygs-x2025">
+        <div class="pub-thumb"><img src="images/CityGS-X.jpg" alt="CityGS-X" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">ICCV 2025</span></div>
+          <h3 class="pub-title">CityGS-X: A Scalable Architecture for Efficient and Geometrically Accurate Large-Scale Scene Reconstruction</h3>
+          <p class="pub-authors">Yuanyuan Gao&dagger;, <span class="me">Hao Li&dagger;</span>, Jiaqi Chen, Zhihang Zhong, Zhengyu Zou, Dingwen Zhang, Xiao Sun, Junwei Han</p>
+          <div class="pub-links">
+            <a href="https://lifuguan.github.io/CityGS-X/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2503.23044"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/gyy456/CityGS-X"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="xld2024">
-          <td class="pub_td1">
-            <img
-              src="images/xld_image.jpg"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="XLD Dataset Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>XLD: A Cross-Lane Dataset for Benchmarking Novel Driving View Synthesis</b>
-            <br /><br />
-            <strong>Hao Li</strong>,
-            <u>Chenming Wu</u>, <u>Chen Zhao</u>, <u>Haocheng Feng</u>, <u>Errui Ding</u>,
-            <u>Dingwen Zhang#</u>, <u>Jingdong Wang</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">3DV 2025</strong></i>
-            </div>
-            <a class="box" href="https://3d-aigc.github.io/XLD/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2406.18360">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/lifuguan/xld_code">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- DGTR -->
+      <article class="pub" id="dgtr2024">
+        <div class="pub-thumb"><img src="images/dgtr.png" alt="DGTR" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">ICRA 2025</span></div>
+          <h3 class="pub-title">DGTR: Distributed Gaussian Turbo-Reconstruction for Sparse-View Vast Scenes</h3>
+          <p class="pub-authors"><span class="me">Hao Li</span>, Yuanyuan Gao, Haosong Peng, Chenming Wu, Weicai Ye, Yufeng Zhan, Chen Zhao, Dingwen Zhang, Jingdong Wang, Junwei Han</p>
+          <div class="pub-links">
+            <a href="https://3d-aigc.github.io/DGTR/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2411.12309"><i class="fa fa-file-lines"></i> Paper</a>
+          </div>
+        </div>
+      </article>
 
-        <!-- ================= 2024 ================= -->
-        <tr id="cosurfgs2024">
-          <td class="pub_td1">
-            <img
-              src="images/cosurfgs.png"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="CoSurfGS Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>CoSurfGS: Collaborative 3D Surface Gaussian Splatting with Distributed Learning for Large Scene Reconstruction</b>
-            <br /><br />
-            <u>Yuanyuan Gao†</u>, <u>Yalun Dai†</u>,
-            <strong>Hao Li†</strong>, <u>Weicai Ye</u>, <u>Jiaqi Chen</u>, <u>Dingwen Zhang</u>, <u>Tong He</u>, <u>Guofeng Zhang</u>, <u>Junwei Han</u>
-            <br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">IJCV 2024</strong></i>
-            </div>
-            <a class="box" href="https://gyy456.github.io/CoSurfGS/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2412.17612">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/zju3dv/CoSurfGS">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- XLD -->
+      <article class="pub" id="xld2024">
+        <div class="pub-thumb"><img src="images/xld_image.jpg" alt="XLD" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">3DV 2025</span></div>
+          <h3 class="pub-title">XLD: A Cross-Lane Dataset for Benchmarking Novel Driving View Synthesis</h3>
+          <p class="pub-authors"><span class="me">Hao Li</span>, Chenming Wu, Chen Zhao, Haocheng Feng, Errui Ding, Dingwen Zhang#, Jingdong Wang</p>
+          <div class="pub-links">
+            <a href="https://3d-aigc.github.io/XLD/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2406.18360"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/lifuguan/xld_code"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="gpnerf2024">
-          <td class="pub_td1">
-            <video autoplay loop muted width="180" height="120" style="display: block; margin: 0 auto;">
-              <source src="images/gpnerf_video.mp4" type="video/mp4">
-            </video>
-          </td>
-          <td class="pub_td2">
-            <b>GP-NeRF: Generalized Perception NeRF for Context-Aware 3D Scene Understanding</b><br /><br />
-            <strong>Hao Li</strong>,
-            <u>Dingwen Zhang</u>, <u>Yalun Dai</u>, <u>Nian Liu</u>, <u>Lechao Cheng</u>, <u>Jingfeng Li</u>, <u>Jingdong Wang</u>, <u>Junwei Han</u><br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">CVPR 2024 - Highlight</strong></i>
-            </div>
-            <a class="box" href="https://lifuguan.github.io/gpnerf-pages/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2311.11863">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/lifuguan/GP-NeRF">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- ===== 2024 ===== -->
+      <!-- CoSurfGS -->
+      <article class="pub" id="cosurfgs2024">
+        <div class="pub-thumb"><img src="images/cosurfgs.png" alt="CoSurfGS" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">IJCV 2024</span></div>
+          <h3 class="pub-title">CoSurfGS: Collaborative 3D Surface Gaussian Splatting with Distributed Learning for Large Scene Reconstruction</h3>
+          <p class="pub-authors">Yuanyuan Gao&dagger;, Yalun Dai&dagger;, <span class="me">Hao Li&dagger;</span>, Weicai Ye, Jiaqi Chen, Dingwen Zhang, Tong He, Guofeng Zhang, Junwei Han</p>
+          <div class="pub-links">
+            <a href="https://gyy456.github.io/CoSurfGS/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2412.17612"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/zju3dv/CoSurfGS"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="ltgc2024">
-          <td class="pub_td1">
-            <img
-              src="images/ltgc_image.jpg"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="LTGC Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>LTGC: Long-Tail Recognition via Leveraging LLMs-driven Generated Content</b><br /><br />
-            <u>Qihao Zhao†</u>, <u>Yalun Dai†</u>, <strong>Hao Li†</strong>, <u>Wei Hu</u>, <u>Fan Zhang</u>, <u>Jun Liu</u><br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">CVPR 2024 - Oral Presentation</strong></i>
-            </div>
-            <a class="box" href="https://ltgccode.github.io/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2403.05854">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/ltgccode/LTGC-Long-Tail-Recognition-via-Leveraging-Generated-Content">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- GP-NeRF -->
+      <article class="pub" id="gpnerf2024">
+        <div class="pub-thumb"><video autoplay loop muted playsinline><source src="images/gpnerf_video.mp4" type="video/mp4" /></video></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">CVPR 2024</span><span class="pub-tag honor">Highlight</span></div>
+          <h3 class="pub-title">GP-NeRF: Generalized Perception NeRF for Context-Aware 3D Scene Understanding</h3>
+          <p class="pub-authors"><span class="me">Hao Li</span>, Dingwen Zhang, Yalun Dai, Nian Liu, Lechao Cheng, Jingfeng Li, Jingdong Wang, Junwei Han</p>
+          <div class="pub-links">
+            <a href="https://lifuguan.github.io/gpnerf-pages/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2311.11863"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/lifuguan/GP-NeRF"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="ggrt2024">
-          <td class="pub_td1">
-            <video autoplay loop muted width="180" height="120" style="display: block; margin: 0 auto;">
-              <source src="images/ggrt_video.mp4" type="video/mp4">
-            </video>
-          </td>
-          <td class="pub_td2">
-            <b>GGRt: Towards Pose-free Generalizable 3D Gaussian Splatting in Real-time</b><br /><br />
-            <strong>Hao Li</strong>,
-            <u>Yuanyuan Gao</u>, <u>Chenming Wu</u>, <u>Dingwen Zhang</u>, <u>Yalun Dai</u>, <u>Chen Zhao</u>, <u>Haocheng Feng</u>, <u>Errui Ding</u>,
-            <u>Jingdong Wang</u>, <u>Junwei Han</u><br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">ECCV 2024</strong></i>
-            </div>
-            <a class="box" href="https://3d-aigc.github.io/GGRt/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2312.02981">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-            <a href="https://github.com/lifuguan/GGRt_official">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- LTGC -->
+      <article class="pub" id="ltgc2024">
+        <div class="pub-thumb"><img src="images/ltgc_image.jpg" alt="LTGC" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">CVPR 2024</span><span class="pub-tag honor">Oral</span></div>
+          <h3 class="pub-title">LTGC: Long-Tail Recognition via Leveraging LLMs-driven Generated Content</h3>
+          <p class="pub-authors">Qihao Zhao&dagger;, Yalun Dai&dagger;, <span class="me">Hao Li&dagger;</span>, Wei Hu, Fan Zhang, Jun Liu</p>
+          <div class="pub-links">
+            <a href="https://ltgccode.github.io/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2403.05854"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/ltgccode/LTGC-Long-Tail-Recognition-via-Leveraging-Generated-Content"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="vdg2024">
-          <td class="pub_td1">
-            <video autoplay loop muted width="180" height="120" style="display: block; margin: 0 auto;">
-              <source src="images/vdg_video.mp4" type="video/mp4">
-            </video>
-          </td>
-          <td class="pub_td2">
-            <b>VDG: Vision-Only Dynamic Gaussian for Driving Simulation</b><br /><br />
-            <strong>Hao Li</strong>,
-            <u>Jingfeng Li</u>, <u>Dingwen Zhang</u>, <u>Chenming Wu</u>, <u>Jieqi Shi</u>, <u>Chen Zhao</u>, <u>Haocheng Feng</u>, <u>Errui Ding</u>,
-            <u>Jingdong Wang</u>, <u>Junwei Han</u><br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">IEEE RA-L 2024</strong></i>
-            </div>
-            <a class="box" href="https://3d-aigc.github.io/VDG/">
-              <i class="fas fa-home" aria-hidden="true">&nbsp;</i>Home&nbsp;
-            </a>
-            <a class="box" href="https://arxiv.org/abs/2406.18198">
-              <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
-            </a>
-          </td>
-        </tr>
+      <!-- GGRt -->
+      <article class="pub" id="ggrt2024">
+        <div class="pub-thumb"><video autoplay loop muted playsinline><source src="images/ggrt_video.mp4" type="video/mp4" /></video></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">ECCV 2024</span></div>
+          <h3 class="pub-title">GGRt: Towards Pose-free Generalizable 3D Gaussian Splatting in Real-time</h3>
+          <p class="pub-authors"><span class="me">Hao Li</span>, Yuanyuan Gao, Chenming Wu, Dingwen Zhang, Yalun Dai, Chen Zhao, Haocheng Feng, Errui Ding, Jingdong Wang, Junwei Han</p>
+          <div class="pub-links">
+            <a href="https://3d-aigc.github.io/GGRt/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2312.02981"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/lifuguan/GGRt_official"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="asdt2024">
-          <td class="pub_td1">
-            <img
-              src="images/asdt_image.jpg"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="ASDT Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>Weakly Supervised Semantic Segmentation via Alternate Self-Dual Teaching</b><br /><br />
-            <u>Dingwen Zhang</u>,
-            <strong>Hao Li</strong>, <u>Wenyuan Zeng</u>, <u>Chaowei Fang</u>, <u>Lechao Cheng</u>, <u>Ming-Ming Cheng</u>, <u>Junwei Han</u><br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">IEEE TIP 2024</strong></i>
-            </div>
-            <a class="box" href="https://ieeexplore.ieee.org/document/10367821">
-              <i class="fas fa-file-lines" aria-hidden="true">&nbsp;</i>Paper&nbsp;
-            </a>
-            <a href="https://github.com/lifuguan/ASDT">
-              <i class="fa fa-github" aria-hidden="true">&nbsp;</i>Code&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- VDG -->
+      <article class="pub" id="vdg2024">
+        <div class="pub-thumb"><video autoplay loop muted playsinline><source src="images/vdg_video.mp4" type="video/mp4" /></video></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">IEEE RA-L 2024</span></div>
+          <h3 class="pub-title">VDG: Vision-Only Dynamic Gaussian for Driving Simulation</h3>
+          <p class="pub-authors"><span class="me">Hao Li</span>, Jingfeng Li, Dingwen Zhang, Chenming Wu, Jieqi Shi, Chen Zhao, Haocheng Feng, Errui Ding, Jingdong Wang, Junwei Han</p>
+          <div class="pub-links">
+            <a href="https://3d-aigc.github.io/VDG/"><i class="fas fa-home"></i> Project</a>
+            <a href="https://arxiv.org/abs/2406.18198"><i class="fa fa-file-lines"></i> Paper</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="tpami2024">
-          <td class="pub_td2" colspan="2">
-            <b>Unsupervised Pre-training with Language-Vision Prompts for Low-Data Instance Segmentation</b><br /><br />
-            <u>Dingwen Zhang</u>,
-            <strong>Hao Li</strong>, <u>Diqi He</u>, <u>Nian Liu</u>, <u>Lechao Cheng</u>, <u>Jingdong Wang</u>, <u>Junwei Han</u><br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">IEEE T-PAMI 2024</strong></i>
-            </div>
-          </td>
-        </tr>
+      <!-- ASDT -->
+      <article class="pub" id="asdt2024">
+        <div class="pub-thumb"><img src="images/asdt_image.jpg" alt="ASDT" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">IEEE TIP 2024</span></div>
+          <h3 class="pub-title">Weakly Supervised Semantic Segmentation via Alternate Self-Dual Teaching</h3>
+          <p class="pub-authors">Dingwen Zhang, <span class="me">Hao Li</span>, Wenyuan Zeng, Chaowei Fang, Lechao Cheng, Ming-Ming Cheng, Junwei Han</p>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/document/10367821"><i class="fa fa-file-lines"></i> Paper</a>
+            <a href="https://github.com/lifuguan/ASDT"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </article>
 
-        <tr id="v2ags2024">
-          <td class="pub_td2" colspan="2">
-            <b>V2A-GS: End to End Reconstruction of Articulated Objects from Video Sequences</b><br /><br />
-            <strong>Hao Li</strong>, <u>Zhengyu Zou</u>, <u>Wenke Xia</u>, <u>Fangcheng Zhong</u>, <u>Cengiz Oztireli</u>, <u>Dingwen Zhang</u>, <u>Junwei Han</u><br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">arXiv 2024</strong></i>
-            </div>
-          </td>
-        </tr>
+      <!-- LVP / TPAMI -->
+      <article class="pub" id="tpami2024">
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">IEEE T-PAMI 2024</span></div>
+          <h3 class="pub-title">Unsupervised Pre-training with Language-Vision Prompts for Low-Data Instance Segmentation</h3>
+          <p class="pub-authors">Dingwen Zhang, <span class="me">Hao Li</span>, Diqi He, Nian Liu, Lechao Cheng, Jingdong Wang, Junwei Han</p>
+        </div>
+      </article>
 
-        <!-- ================= 2023 ================= -->
-        <tr id="saliencyprompt2023">
-          <td class="pub_td1">
-            <img
-              src="images/boost_image.jpg"
-              width="180"
-              style="display: block; margin: 0 auto; border-radius: 5px;"
-              alt="Saliency Prompt Image"
-            />
-          </td>
-          <td class="pub_td2">
-            <b>Boosting Low-Data Instance Segmentation by Unsupervised Pre-training with Saliency Prompt</b><br /><br />
-            <strong>Hao Li</strong>,
-            <u>Dingwen Zhang</u>, <u>Nian Liu</u>, <u>Lechao Cheng</u>, <u>Yalun Dai</u>, <u>Xinggang Wang</u>, <u>Junwei Han</u><br />
-            <div style="margin-top: 10px; margin-bottom: 10px">
-              <i><strong style="color: brown">CVPR 2023</strong></i>
-            </div>
-            <a class="box" href="https://arxiv.org/abs/2302.01171">
-              <i class="fas fa-file-lines" aria-hidden="true">&nbsp;</i>Paper&nbsp;
-            </a>
-          </td>
-        </tr>
+      <!-- V2A-GS -->
+      <article class="pub" id="v2ags2024">
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">arXiv 2024</span></div>
+          <h3 class="pub-title">V2A-GS: End to End Reconstruction of Articulated Objects from Video Sequences</h3>
+          <p class="pub-authors"><span class="me">Hao Li</span>, Zhengyu Zou, Wenke Xia, Fangcheng Zhong, Cengiz Oztireli, Dingwen Zhang, Junwei Han</p>
+        </div>
+      </article>
 
-      </table>
+      <!-- ===== 2023 ===== -->
+      <!-- Saliency Prompt -->
+      <article class="pub" id="saliencyprompt2023">
+        <div class="pub-thumb"><img src="images/boost_image.jpg" alt="Saliency Prompt" loading="lazy" /></div>
+        <div class="pub-info">
+          <div class="pub-tags"><span class="pub-venue">CVPR 2023</span></div>
+          <h3 class="pub-title">Boosting Low-Data Instance Segmentation by Unsupervised Pre-training with Saliency Prompt</h3>
+          <p class="pub-authors"><span class="me">Hao Li</span>, Dingwen Zhang, Nian Liu, Lechao Cheng, Yalun Dai, Xinggang Wang, Junwei Han</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2302.01171"><i class="fa fa-file-lines"></i> Paper</a>
+          </div>
+        </div>
+      </article>
+    </section>
 
-      <h1>Talks</h1>
-      <li>可泛化3DGS的现状和未来  (<a href="https://mp.weixin.qq.com/s/rGh-zI0zYaJKZ0EWIjyy7w">GAMES Webinar</a>)</li>
-      <li>可泛化语义NeRF  (<a href="https://mp.weixin.qq.com/s/htNrZaDuhwez03kqJLwjpg">3D视觉工坊</a>)</li>
+    <!-- ===== Talks ===== -->
+    <section id="talks">
+      <h2 class="section-title">Talks</h2>
+      <ul class="plain-list">
+        <li>可泛化3DGS的现状和未来 (<a href="https://mp.weixin.qq.com/s/rGh-zI0zYaJKZ0EWIjyy7w">GAMES Webinar</a>)</li>
+        <li>可泛化语义NeRF (<a href="https://mp.weixin.qq.com/s/htNrZaDuhwez03kqJLwjpg">3D视觉工坊</a>)</li>
+      </ul>
+    </section>
 
-      <h1>Honors and Awards</h1>
-      <li> <b>Outstanding Students (First Grade)</b> in Northwestern Polytechnical University, 2024.</li>
-      <li> <b>Outstanding Interns</b> in Baidu Inc., 2023.</li>
-      <li> <b>2nd</b> in International Algorithm Case Competition, 2022.</li>
-      <li> <b>Finalist Winner (2%)</b> in International Mathematical Contest in Modeling (MCM), 2021.</li>
-      <br />
-      
+    <!-- ===== Honors and Awards ===== -->
+    <section id="awards">
+      <h2 class="section-title">Honors and Awards</h2>
+      <ul class="plain-list">
+        <li><b>Outstanding Students (First Grade)</b> in Northwestern Polytechnical University, 2024.</li>
+        <li><b>Outstanding Interns</b> in Baidu Inc., 2023.</li>
+        <li><b>2nd</b> in International Algorithm Case Competition, 2022.</li>
+        <li><b>Finalist Winner (2%)</b> in International Mathematical Contest in Modeling (MCM), 2021.</li>
+      </ul>
+    </section>
 
-      
-      <div align="center">
-        <div style="width: 250px; height: 250px">
-          <!-- <script type="text/javascript" id="clstr_globe"
-            src="//clustrmaps.com/globe.js?d=rW3OE8b2mKOjjq_alCSlCohNv0gBVFF6R0Pj4W60HmY"></script> -->
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="map">
+        <div style="width: 220px; height: 160px">
           <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5pkd9xbyiaa&amp;m=0&amp;c=00fff6&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
         </div>
-        The source code of this website is borrowed from <a href="https://xiuyuliang.cn/">Yuliang Xiu</a> <br />
-        <strong>
-          The page is last updated at <span style="color: rgb(53, 182, 171)" id="demo"></span>
-        </strong>
       </div>
-    </div>
+      The source code of this website is borrowed from <a href="https://xiuyuliang.cn/">Yuliang Xiu</a>.<br />
+      Last updated at <span id="lastUpdate"></span>.
+    </footer>
   </div>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("themeToggle");
+      var icon = toggle.querySelector("i");
+      function syncIcon() {
+        var dark = document.documentElement.getAttribute("data-theme") === "dark";
+        icon.className = dark ? "fas fa-sun" : "fas fa-moon";
+      }
+      syncIcon();
+      toggle.addEventListener("click", function () {
+        var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        syncIcon();
+      });
+      var el = document.getElementById("lastUpdate");
+      if (el) el.textContent = document.lastModified.substr(0, 10);
+    })();
+  </script>
 </body>
 
 </html>
